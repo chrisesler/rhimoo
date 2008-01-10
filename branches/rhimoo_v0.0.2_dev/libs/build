@@ -1,0 +1,14 @@
+#!/bin/sh
+
+CLASSPATH="./:./js.jar:./servlet-api-2.5-6.1.6.jar:./jetty-util-6.1.6.jar:./jetty-6.1.6.jar:./mysql-connector-java-3.0.17-ga-bin.jar:./cometd-api-0.9.20071105.jar:./cometd-bayeux-6.1.6.jar:./bayeux-client-6.1.6.jar"
+
+#javac -classpath ${CLASSPATH} JsConnection.java
+
+#javac -classpath ${CLASSPATH} JavascriptServlet.java
+
+javac -classpath ${CLASSPATH} MooServerTemplate.java
+
+javac -classpath ${CLASSPATH} MooHandlerTemplate.java
+
+javac -classpath ${CLASSPATH} MooServletTemplate.java
+
