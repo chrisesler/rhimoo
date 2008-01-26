@@ -29,43 +29,45 @@ rhimoo.defineClass("rhimoo.server.init",
 				this.setOptions(options);
 			}
 
-			//$extend(this.BootstrapTemplate.useAJP, this.options);
 			var bootstrap = $merge(this.options,rhimoo.server.templates.jettyServer);
-
-			//print(bootstrap.toSource());
 
 			this.jetty = new JavaAdapter(MooServerTemplate,bootstrap);
 			this.jetty.Setup();
-			//print(this.BootstrapTemplate.toSource());
-
 		},
 
 		makeHandler: function(handler){
 			print("++ making handler");
 			var newHandler = $merge(handler,rhimoo.server.templates.jettyHandler);
-			return new JavaAdapter(MooHandlerTemplate,newHandler);
+			var merged = new JavaAdapter(MooHandlerTemplate,newHandler);
+	
+			return merged;
 		},
 		
 		makeServlet: function(methods){
 			print("++ making servlet");
 			methods = $merge(methods,rhimoo.server.templates.jettyHandler);
-			
+
 			var s = {};
-			  s["methods"] = methods;
-			  s["adapter"] = new JavaAdapter(MooServletTemplate, methods);
-			
-		//print("CLASSNAME: "+s["adapter"].newInstance());
-			
-			  s["classloader"] = s["adapter"].getClass().getClassLoader();
-			  s["name"] = s["adapter"].getClass().getName();
-			  s["holder"] = new JavaAdapter(ServletHolder, {
-			    newInstance: function () {
-			      return new JavaAdapter(MooServletTemplate, methods);
-			    }
-			  });
-			  s["holder"].setName(s["name"]);
-			  s["holder"].setClassName(s["name"]);
+			s["methods"] = methods;
+			s["adapter"] = new JavaAdapter(MooServletTemplate, methods);
+
+
+			s["classloader"] = s["adapter"].getClass().getClassLoader();
+			s["name"] = s["adapter"].getClass().getName();
+			s["class"] = s["adapter"].getClass().getName();
+			s["holder"] = new JavaAdapter(ServletHolder, {
+				newInstance: function () {
+					var servlet = new JavaAdapter(MooServletTemplate, methods);
+					servlet.initialize();
+					return servlet;
+				}
+			});
+			s["holder"].setName(s["name"]);
+			s["holder"].setClassName(s["name"]);
+
 			  return s;
+			
+
 			
 			//return new JavaAdapter(MooServletTemplate,newServlet);
 		},
@@ -96,8 +98,8 @@ rhimoo.defineClass("rhimoo.server.init",
 					// so testing only handlers for now
 					if(file.test("SERVLET","i")){
 						print("SERVLET : "+file);
-						//var servlet = this.makeServlet(controllerItem.controller);
-						//this.jetty.addServlet(controllerItem.path,controllerItem.contextPath,servlet);
+						var servlet = this.makeServlet(controllerItem.controller);
+						this.jetty.addServlet(controllerItem.path,controllerItem.contextPath,servlet);
 					}
 				}
 			}
