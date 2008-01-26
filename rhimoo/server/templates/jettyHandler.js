@@ -7,10 +7,15 @@ rhimoo.defineClass("rhimoo.server.templates.jettyHandler",
 		response: null,
 		request: null,
 		parameters: {},
+		sm: null,
+		session: null,
 		ControllerInit: function(request,response){
+			
 			this.request = request;
 			this.response = response;
-
+			
+			
+			
 			var paramNames = request.getParameterNames();
 			//print($type(paramNames));
 			for (var name in paramNames) {

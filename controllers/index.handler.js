@@ -1,5 +1,5 @@
 var controllerItem = {
-	path : "/",
+	path : "/index",
 	controller : {
 	ProcessHandler: function(request, response){
 		//var wassup = readFile("static/test.html");
@@ -27,7 +27,8 @@ var controllerItem = {
 			contentType: 'text/html',
 		    status: 200
 		};
-		
+		//this.request.getSessionManager();
+		//var sess = "session="+this.session.getSession(true).getId();
 		this.body =  html;
 	},
 	viewIndex: function(context) {

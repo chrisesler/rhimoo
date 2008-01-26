@@ -13,21 +13,13 @@
 //========================================================================
 
 import java.io.*;
-import java.util.Enumeration;
+import java.util.*;
 
-import javax.servlet.ServletException;
+import javax.servlet.*;
 import javax.servlet.http.*;
 
-import javax.servlet.ServletInputStream;
-import javax.servlet.ServletOutputStream;
-
-import org.mortbay.jetty.Connector;
-import org.mortbay.jetty.Handler;
-import org.mortbay.jetty.HttpConnection;
-import org.mortbay.jetty.Request;
-import org.mortbay.jetty.Server;
-import org.mortbay.jetty.handler.AbstractHandler;
-import org.mortbay.jetty.handler.ContextHandler;
+import org.mortbay.jetty.*;
+import org.mortbay.jetty.handler.*;
 import org.mortbay.jetty.nio.SelectChannelConnector;
 
 
@@ -46,15 +38,7 @@ public abstract class MooHandlerTemplate extends AbstractHandler
         base_request.setHandled(true);
         
 		response.setStatus(HttpServletResponse.SC_OK);
-		
-		//Enumeration paramNames = request.getParameterNames();
-        //while(paramNames.hasMoreElements()) {
-          //String paramName = (String)paramNames.nextElement();
-		  //String paramValue = request.getParameter(paramName);
-		  //System.out.println(paramName);
-          // NOTE use getParameterValues() if could be more than one of the parameter with the same name.
-          //PushParams(paramName, paramValue);
-        //}
+
 		
 		ControllerInit(request,response);
 		

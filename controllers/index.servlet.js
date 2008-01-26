@@ -1,6 +1,6 @@
 var controllerItem = {
-	path : "/",
-	contextPath : "/*",
+	path : "/test",
+	contextPath : "/test/*",
 	controller : {
 		ProcessHandler: function(request, response){
 			//var wassup = readFile("static/test.html");
