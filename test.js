@@ -1,4 +1,10 @@
+importClass(java.lang.Thread,
+            java.lang.Runnable,
+            java.lang.System,
+			java.lang.Class);
+
 load("rhimoo/javaPackages.js");
+
 importClass(Packages.MooAbstractServlet);
 importClass(Packages.MooServlet);
 importClass(Packages.MooClass);
@@ -30,10 +36,10 @@ function toJArray(type, objects) {
   return jarray;
 }
 
-methods = new JavaAdapter(MooClass, methods);//toJArray(Servlet,methods);
+//methods = new JavaAdapter(MooClass, methods);//toJArray(Servlet,methods);
 
-//servlet = $extend(methods,HttpServlet);
-servlet = methods;
+servlet = $extend(methods,HttpServlet);
+//servlet = methods;
 
 //servlet.classLoader = servlet.getClass().getClassLoader();
 //servlet.name = servlet.getClass().getClassLoader().getClass();
@@ -42,11 +48,11 @@ servlet = methods;
 var s = {};
   s["methods"] = methods;
   s["adapter"] = servlet;
-  s["classloader"] = s["adapter"].getClass().getClassLoader().getClass();
+  s["classLoader"] = s["adapter"].getClass().getClassLoader().getClass();
   s["name"] = s["adapter"].getClass().getName();
   s["holder"] = new JavaAdapter(ServletHolder, {
     newInstance: function () {
-      return new JavaAdapter(servlet, methods);
+      return new JavaAdapter(HttpServlet, methods);
     }
   });
   s["holder"].setName(s["name"]);
@@ -88,8 +94,22 @@ print("+++");*/
 
 
 var server = new Server(3000);
+
 var context = new Context(server,"/",Context.SESSIONS);
-context.addServlet(new ServletHolder(servlet), "/*");
-         
+var holder = new ServletHolder(new servlet);
+
+print(holder.getServlet());
+context.addServlet(holder.getServlet().getClass(), "/*");
+
 server.start();
-server.join();
+//server.join();
+         
+
+
+//var thingy =  new MooServlet();
+//var test = new thingy();
+//var test_c = thingy.getClass();
+
+//for (i in test_c.constructors) { print("test_c.constructors[" + i + "] = " + test_c.constructors[i]); }
+
+//var me = new test_c.constructors[1]();

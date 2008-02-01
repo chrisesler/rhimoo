@@ -14,7 +14,9 @@ rhimoo.defineClass("rhimoo.server.templates.jettyHandler",
 			this.request = request;
 			this.response = response;
 			
-			
+			user = new Cookie("user","Jennifer");
+			 user.setMaxAge(3600);
+			response.addCookie(user);
 			
 			var paramNames = request.getParameterNames();
 			//print($type(paramNames));

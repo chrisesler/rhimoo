@@ -6,8 +6,11 @@ CLASSPATH="./:./js.jar:./servlet-api-2.5-6.1.6.jar:./jetty-util-6.1.6.jar:./jett
 
 #javac -classpath ${CLASSPATH} JavascriptServlet.java
 
+#javac -classpath ${CLASSPATH} RhinoLoader.java
 
-#javac -classpath ${CLASSPATH} MooAbstractServlet.java
+#javac -classpath ${CLASSPATH} TestServer.java
+
+javac -classpath ${CLASSPATH} MooAbstractServlet.java
 javac -classpath ${CLASSPATH} MooServlet.java
 javac -classpath ${CLASSPATH} MooClass.java
 
