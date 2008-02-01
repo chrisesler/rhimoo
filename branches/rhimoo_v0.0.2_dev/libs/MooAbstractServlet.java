@@ -30,7 +30,9 @@ import org.mortbay.jetty.servlet.*;
 
 public abstract class MooAbstractServlet extends HttpServlet
 {
-		public MooAbstractServlet() {}
+		//public MooAbstractServlet() {
+		//	super();
+		//}
 		
 		public void init(ServletConfig init) throws ServletException {
 	        super.init(init);

@@ -21,24 +21,43 @@ import javax.servlet.http.*;
 import org.mortbay.jetty.*;
 import org.mortbay.jetty.handler.*;
 import org.mortbay.jetty.nio.SelectChannelConnector;
+import org.mortbay.jetty.servlet.*;
 
 
     
 public abstract class MooHandlerTemplate extends AbstractHandler
 {
 
+	public SessionHandler handler = new SessionHandler();
+
 	public abstract void ProcessHandler(HttpServletRequest request, HttpServletResponse response);
 	public abstract void ControllerInit(HttpServletRequest request, HttpServletResponse response);
 	public abstract void PushParams(String paramName, String paramValue);
 	public abstract void CloseRequest();
-
+	
+	
+	
+	public void main(String[] args) 
+	throws Exception
+	{
+		//handler = new SessionHandler();
+		//session = handler.getSession();
+	}
+	
     public void handle(String target, HttpServletRequest request, HttpServletResponse response, int dispatch) throws IOException, ServletException
     {
         Request base_request = (request instanceof Request) ? (Request)request:HttpConnection.getCurrentConnection().getRequest();
-        base_request.setHandled(true);
+        
+		//handler = new SessionHandler();
+		//session = handler.getSession(true);
+
+		
+
+		base_request.setHandled(true);		
         
 		response.setStatus(HttpServletResponse.SC_OK);
 
+		//base_request.getSession(true);
 		
 		ControllerInit(request,response);
 		
