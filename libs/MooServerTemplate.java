@@ -26,14 +26,18 @@ import org.mortbay.jetty.handler.AbstractHandler;
 import org.mortbay.jetty.handler.ContextHandler;
 import org.mortbay.jetty.nio.SelectChannelConnector;
 
+import org.mortbay.jetty.servlet.*;
+
 public abstract class MooServerTemplate
 {
-    public static void main(String[] args) 
+	
+	public static void main(String[] args) 
 	throws Exception
 	{}
 
 	public abstract void Setup();
 	
 	public abstract void Start();
+	
     
 }

@@ -98,8 +98,8 @@ rhimoo.defineClass("rhimoo.server.init",
 					// so testing only handlers for now
 					if(file.test("SERVLET","i")){
 						print("SERVLET : "+file);
-						var servlet = this.makeServlet(controllerItem.controller);
-						this.jetty.addServlet(controllerItem.path,controllerItem.contextPath,servlet);
+						//var servlet = this.makeServlet(controllerItem.controller);
+						//this.jetty.addServlet(controllerItem.path,controllerItem.contextPath,servlet);
 					}
 				}
 			}

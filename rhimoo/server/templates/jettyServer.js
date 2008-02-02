@@ -34,7 +34,6 @@ rhimoo.defineClass("rhimoo.server.templates.jettyServer",
 			this.contextHandler = new ContextHandlerCollection();
 	        //this.contextHandler.setHandlers(this.toJavaArray(Handler,this.contexts));
 			this.server.setHandler(this.contextHandler);
-			
 	
 			// EXPERIMENT
 			resources = new ResourceHandler();
@@ -51,7 +50,7 @@ rhimoo.defineClass("rhimoo.server.templates.jettyServer",
 		Start: function(){
 			print("STARTING SERVER..........hold on");
 			this.handlerCollection = new HandlerCollection();
-	        this.handlerCollection.setHandlers(this.toJavaArray(Handler,[this.contextHandler,new DefaultHandler()]));
+	        this.handlerCollection.setHandlers(this.toJavaArray(Handler,[this.contextHandler,new DefaultHandler(), new SessionHandler()]));
 
 	        this.server.setStopAtShutdown(true);
 			this.server.start();
@@ -62,9 +61,13 @@ rhimoo.defineClass("rhimoo.server.templates.jettyServer",
 
 		addHandler: function(path,handler){
 			print("++++ adding handler");
+			
 			var cx = new Context(this.contextHandler,path,Context.SESSIONS);
+			
+			//print(Context.SESSIONS);
 			//var sessionhandler = new SessionHandler();
 			//sessionhandler.setHandler(handler);
+			
 			cx.setHandler(handler);
 			this.contexts.push(cx);
 		},
