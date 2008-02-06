@@ -1,3 +1,7 @@
+/*
+	Based in part on QooxDoo bootstrap
+	http://www.qooxdoo.org
+*/
 var bootstrap = new Class({
 
 	Implements: [Options,Chain],
@@ -148,6 +152,15 @@ var bootstrap = new Class({
 			}
 			
 		});
+	},
+	
+	getDirectory: function(dir){
+		switch(dir){
+			case "views":
+			case "view":
+				return root+"views/";
+				break;
+		}
 	}
 	
 	

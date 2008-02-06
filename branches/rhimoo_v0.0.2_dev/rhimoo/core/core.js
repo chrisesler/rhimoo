@@ -3,8 +3,10 @@ var rhimoo = {
 	repository: 'rhimoo/',
 	registry: {
 		Id: [],
-		Class: {}
+		Class: {},
+		deferred: []
 	},
+	
 	init: function(options){
 		print("==============================================");
 		print("  RHIMOO INITIALIZATION  ");
@@ -16,6 +18,21 @@ var rhimoo = {
 		print("==============================================");
 		rhimoo.loadRequired('rhimoo.util.idGenerator');
 		rhimoo.loadRequired('rhimoo.util.include');
+		rhimoo.loadRequired('rhimoo.util.loadVendors');
+		rhimoo.loadRequired("rhimoo.server.init");
 		rhimoo.loadRequired('rhimoo.template.parser');
+		
+		
+		print("==============================================");
+		print("  LOADING VENDOR FILES ");
+		print("==============================================");
+		rhimoo.util.loadVendors();
+		
+		print("==============================================");
+		print("  RUNNING DEFFERED ACTIONS ");
+		print("==============================================");
+		rhimoo.registry.deferred.each(function(item){
+			item();
+		});	
 	}
 };

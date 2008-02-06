@@ -34,9 +34,6 @@ rhimoo.defineClass("rhimoo.addMacro",
 //basic macros
 rhimoo.addMacro({
 	escape : function(s) {
-		//print(s);
-		//print($type(s));
-	    //return new String(s);
 		s = new java.lang.String(s);
 		return s.toString();
 	}
@@ -46,5 +43,12 @@ rhimoo.addMacro({
 	each: function(seq, callback) {
 	    for (var i = 0, n = seq.length; i != n; i++)
 	      callback(seq[i], i);
+	  }
+});
+
+rhimoo.addMacro({
+	include: function(file,context) {
+		print("TESTING INCLUDE FILE: "+root+"views/"+file);
+	    print("TESTING INCLUDE: "+context.temp);
 	  }
 });
