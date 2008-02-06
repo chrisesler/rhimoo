@@ -1,29 +1,24 @@
-/*
-	template parser. 
-	renders like ERB
-	
-	based on JSTemplates by Armin Ronacher.
-	see: http://lucumr.pocoo.org/cogitations/2007/06/14/erb-for-javascript/
-*/
 rhimoo.defineClass("rhimoo.template.parser",
 {
-  requires: [
-			"rhimoo.template.values",
-			"rhimoo.template.macros",
-			],
+  	requires: [
+				"rhimoo.template.values",
+				"rhimoo.template.macros",
+				],
 
   statics : new Class({
 
 		BLOCK_REGEX : /(^\s*%.*?$|<%(?!%)(?:%%|[^%])*?%>)/m,
 
 		buffer : [],
-		
+
 		temp : 'YAY',
 
 		//initialize: function(source){
 		initialize: function(file){
-			print("%%%%%%%  "+root+"views/"+file);
+			//print("%%%%%%%  "+root+"views/"+file);
+			
 			var source = readFile(root+"views/"+file);
+			
 			var inBlock=true;
 			var parts = source.split(this.BLOCK_REGEX);
 			
@@ -31,13 +26,13 @@ rhimoo.defineClass("rhimoo.template.parser",
 			
 		      var part = parts[i].replace(/(<|>)%%/g, '$1%');
 		
-		      if (inBlock = !inBlock){
-				if(part[0] == '<'){
-					part = part.substr(2, part.length - 4);
-				}else{
-					part = part.substr(part.indexOf('%') + 1, part.length);
+				if (inBlock = !inBlock){
+					if(part[0] == '<'){
+						part = part.substr(2, part.length - 4);
+					}else{
+						part = part.substr(part.indexOf('%') + 1, part.length);
+					}
 				}
-			}
 			
 			/*
 			if(inBlock){
@@ -58,7 +53,7 @@ rhimoo.defineClass("rhimoo.template.parser",
 		        : ('__buffer__.push("' + part.replace(/\\/g, '\\\\').
 		           replace(/\n/g, '\\\n').replace(/"/g, '\\"') + '")'));
 		    }
-			//print(this.buffer);
+			print(this.buffer);
 		    this.renderFunc = eval('function(__buffer__){' + this.buffer.join(';') + '}');
 		},
 

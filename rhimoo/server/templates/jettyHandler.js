@@ -22,7 +22,7 @@ rhimoo.defineClass("rhimoo.server.templates.jettyHandler",
 			//print($type(paramNames));
 			for (var name in paramNames) {
 				// NOTE use getParameterValues() if could be more than one of the parameter with the same name.
-				print(name);
+				//print(name);
 				if($type(request.getParameter(name))){
 					this.parameters.name = request.getParameter(name);
 				}

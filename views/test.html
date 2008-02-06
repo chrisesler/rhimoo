@@ -1,0 +1,23 @@
+<html>
+	<head>
+		<title>MooServer - Mootools Server-Side Javascript Web Framework</title>
+		<link href="/assets/css/display.css" rel="stylesheet" type="text/css" />
+		<link href="/assets/css/layout.css" rel="stylesheet" type="text/css" />
+
+	</head>
+	<body>
+		<div id="container">
+			<div class="wrap">
+				<div class="info">
+					Hello #{name}!
+					<ul>
+					<?js for (var i = 0, n = items.length; i < n; i++) { ?>
+					 <li>${items[i]}</li>
+					<?js } ?>
+					</ul>
+					<?js include('common/test.html'); ?>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

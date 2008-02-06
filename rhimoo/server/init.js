@@ -32,6 +32,9 @@ rhimoo.defineClass("rhimoo.server.init",
 			var bootstrap = $merge(this.options,rhimoo.server.templates.jettyServer);
 
 			this.jetty = new JavaAdapter(MooServerTemplate,bootstrap);
+			
+			
+			
 			this.jetty.Setup();
 		},
 

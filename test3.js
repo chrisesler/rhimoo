@@ -29,22 +29,23 @@ var test_c = runner.getClass();
 for (i in test_c.constructors) { print("test_c.constructors[" + i + "] = " + test_c.constructors[i]); }*/
  //runner.run();
 
-var server = new Server(3000);
+//var server = new Server(3000);
 
 //var context = new Context(server,"/",Context.SESSIONS);
 
-var loader = new RhinoLoader(new File(root));
- var c = JClass.forName("MyServlet", false, loader);
- var servv = c.newInstance();
+//var loader = new RhinoLoader(new File(root));
+ //var c = JClass.forName("MyServlet", false, loader);
+ //var servv = c.newInstance();
 
 
 //var holder = new ServletHolder(servv);
 
 
-server.setHandler(servv);
+//server.setHandler(servv);
 
 
 //context.addServlet(holder, "/*");
 
-server.start();
-server.join();
+//server.start();
+//server.join();
+new TestServer();

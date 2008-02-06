@@ -19,10 +19,6 @@ load(root+"rhimoo/core/bootstrap.js");
 // initialize rhimoo to setup namespace
 rhimoo.init();
 
-// load up server namespace
-rhimoo.loadRequired("rhimoo.server.init");
-
-
 // initialize server
 server = new rhimoo.server.init({
 	useAJP: true,
@@ -37,7 +33,8 @@ server = new rhimoo.server.init({
 	
 });
 
+// load controllers
 server.loadControllers();
 
-
+// start it up
 server.jetty.Start();

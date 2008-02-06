@@ -48,3 +48,13 @@ rhimoo.addMacro({
 	      callback(seq[i], i);
 	  }
 });
+
+rhimoo.addMacro({
+	include: function(file,parent) {
+		var template = new rhimoo.template.parser(file);
+		var returned = template.render();
+		//arguments.callee.caller.__buffer__.push(returned);
+		print(parent.callee.toString());
+		//return returned;
+	  }
+});

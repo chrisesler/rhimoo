@@ -48,7 +48,9 @@ rhimoo.defineClass("rhimoo.server.templates.jettyServer",
 		},
 
 		Start: function(){
-			print("STARTING SERVER..........hold on");
+			print("==============================================");
+			print("  STARTING SERVER ....... hold on ");
+			print("==============================================");
 			this.handlerCollection = new HandlerCollection();
 	        this.handlerCollection.setHandlers(this.toJavaArray(Handler,[this.contextHandler,new DefaultHandler(), new SessionHandler()]));
 

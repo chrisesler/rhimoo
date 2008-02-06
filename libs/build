@@ -10,9 +10,9 @@ CLASSPATH="./:./js.jar:./servlet-api-2.5-6.1.6.jar:./jetty-util-6.1.6.jar:./jett
 
 #javac -classpath ${CLASSPATH} TestServer.java
 
-javac -classpath ${CLASSPATH} MooAbstractServlet.java
-javac -classpath ${CLASSPATH} MooServlet.java
-javac -classpath ${CLASSPATH} MooClass.java
+#javac -classpath ${CLASSPATH} MooAbstractServlet.java
+#javac -classpath ${CLASSPATH} MooServlet.java
+#javac -classpath ${CLASSPATH} MooClass.java
 
 javac -classpath ${CLASSPATH} MooServerTemplate.java
 
