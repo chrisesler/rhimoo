@@ -88,10 +88,10 @@ rhimoo.defineClass("rhimoo.server.templates.jettyServer",
 			print("++++ adding Servlet");
 			//var cx = this.createServletContext(path);
 			//var cx = new Context(this.contextHandler,path,Context.SESSIONS);
-			var cx = new Context(this.server,path,Context.SESSIONS);
+			var cx = new Context(this.contextHandler,"/",Context.SESSIONS);
 			
 			var holder = new ServletHolder(new MooServlet("controllers/"+file));
-			cx.addServlet(holder, "/rhimoo/*");
+			cx.addServlet(holder, "/*");
 			//cx.setClassLoader(servlet.classloader);
 			//cx.addServlet(new ServletHolder(servlet),contextPath);
 			
