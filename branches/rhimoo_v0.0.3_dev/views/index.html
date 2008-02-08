@@ -1,0 +1,88 @@
+<html>
+	<head>
+		<title>MooServer - Mootools Server-Side Javascript Web Framework</title>
+		<link href="/assets/css/display.css" rel="stylesheet" type="text/css" />
+		<link href="/assets/css/layout.css" rel="stylesheet" type="text/css" />
+		<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+		</script>
+		<script type="text/javascript">
+		_uacct = "UA-278350-31";
+		urchinTracker();
+		</script>
+	</head>
+	<body>
+		<div id="container">
+			<div class="wrap">
+				<div class="info">
+					<p>This website is powered by the mootools javascript web framework using Jetty and Rhino. More info soon. :)</p>
+					<p>Imagine starting a web server with mootools code like this:</p>
+	
+						<pre>
+							<code>
+load("scripts/javaPackages.js");
+load("scripts/env.js"); // John Resig's browser emulation 
+
+// load skeleton html construct so env can set fake browser stuff
+window.location = "scripts/construct.html";
+
+// need mootools
+load("scripts/mootools.js");
+
+// need mooserver
+load("scripts/mooserver.js");
+
+// optional db model
+//load("models/dbmodel.js");
+
+// initialize server
+ms = new MooServer({
+	useAJP: true,
+	ports: {
+		server: 3000,
+		ajp: 8080
+	},
+	assets: {
+		path: "/assets",
+		file: "./static"
+	}
+
+});
+
+// create handler(s)
+MooHandler = ms.makeHandler({
+	ProcessHandler: function(request, response){
+
+		// read template file
+		html = readFile("views/index.html");
+
+		// assign template var to fake DOM
+		document.innerHTML = html;
+		
+		// do whatever DOM manipulation here
+		$("header").setText("groovy");
+
+		this.headers = {
+			contentType: 'text/html',
+			status: 200
+		};
+
+		this.body =  document.innerHTML; 
+	}
+
+});
+
+// add handler to the server
+ms.server.addHandler("/",MooHandler);
+
+// start it up!
+ms.server.Start();
+								
+							</code>
+						</pre>
+	
+					<p>This is really basic, and you can pretty much enhance it however you like. By assigning the base template to the document.innerHTML, we can then use mootools functions to manipulate things such as page title, add/remove css based on browser, loop through items and add them to the template, then we assign it to the response body which gets spit back out.
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
