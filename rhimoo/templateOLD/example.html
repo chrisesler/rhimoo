@@ -1,0 +1,26 @@
+<title>JavaScript Templates Example</title>
+<script type="text/javascript" src="../mootools/mootools-server-1.2-1331.js"></script>
+<script type="text/javascript" src="moojstemplates.js"></script>
+
+<h1>Example</h1>
+<p>
+  The following data is rendered using JavaScript templates:
+</p>
+<div id="output"></div>
+
+<script type="text/javascript">
+  var template = new JSTemplate('\
+    <%# This is a nice little comment %>\
+    <p>Total number of users: <%= this.users.length %></p>\
+    <ul>\
+    <% each(this.users, function(user, idx) { %>\
+      <li>#<%= (idx + 1)+2 %> <%= escape(user) %></li>\n\
+    <% }) %>\
+    </ul>\
+    <p>Last updated on: <%= this.lastUpdate %>\
+  ');
+  document.getElementById('output').innerHTML = template.render({
+    users:        ['H4><0r', 'peter', 'anton'],
+    lastUpdate:   new Date()
+  });
+</script>
