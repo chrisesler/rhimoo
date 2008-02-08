@@ -1,0 +1,3 @@
+CONFIG :: TODO
+
+this will contain probably some java properties so its an easier config.
