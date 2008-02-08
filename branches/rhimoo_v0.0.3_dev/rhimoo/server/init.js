@@ -103,7 +103,7 @@ rhimoo.defineClass("rhimoo.server.init",
 						print("SERVLET : "+file);
 						//var servlet = this.makeServlet(controllerItem.controller);
 						servlet = {};
-						//this.jetty.addServlet(controllerItem.path,controllerItem.contextPath,servlet,file);
+						this.jetty.addServlet(controllerItem.path,controllerItem.contextPath,servlet,file);
 					}
 				}
 			}
