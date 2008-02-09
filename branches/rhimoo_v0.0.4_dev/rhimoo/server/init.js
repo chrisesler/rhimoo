@@ -31,10 +31,8 @@ rhimoo.defineClass("rhimoo.server.init",
 
 			var bootstrap = $merge(this.options,rhimoo.server.templates.jettyServer);
 
-			this.jetty = new JavaAdapter(MooServerTemplate,bootstrap);
-			
-			
-			
+			this.jetty = new MooServer(bootstrap);
+						
 			this.jetty.Setup();
 		},
 
@@ -80,7 +78,7 @@ rhimoo.defineClass("rhimoo.server.init",
 			print("  LOADING CONTROLLERS ");
 			print("==============================================");
 			
-			var controllerDir = new File(root+"controllers");
+			var controllerDir = new File(root+"app/controllers");
 			var fileList = controllerDir.list();
 			//print(fileList);
 			for(var i = 0; i < fileList.length; i++) {

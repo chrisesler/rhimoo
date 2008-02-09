@@ -26,7 +26,7 @@ public class RequestHandler
 {
     private Shell shell;
     
-    public RequestHandler()
+    public RequestHandler(String jsHandle)
     {
         try {
             shell = new Shell();
@@ -38,7 +38,7 @@ public class RequestHandler
 
         // load the JavaScript files for the web app framework and
         // the files for the specific web app.
-        shell.loadFile("rhimoo/rhimoo.js");
+        shell.loadFile(jsHandle);
     }
 
     public void processRequest(HttpServletRequest request, HttpServletResponse response) throws IOException

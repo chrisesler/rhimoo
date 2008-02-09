@@ -25,4 +25,4 @@ echo "Starting MooServer"
 
 
 # Invoke the Java VM
-$JAVACMD -classpath ${CLASSPATH} org.mozilla.javascript.tools.shell.Main rhimoo/serverinit.js
+$JAVACMD -classpath ${CLASSPATH} org.mozilla.javascript.tools.shell.Main rhimoo/server.js
