@@ -2,7 +2,7 @@ rhimoo.defineClass("rhimoo.util.loadVendors",
 {
   statics : function(){
 		
-		var vendorDir = new File(root+"vendors");
+		var vendorDir = new File(root+"vendor");
 		var fileList = vendorDir.list();
 		manifest = [];
 		

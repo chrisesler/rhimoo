@@ -1,9 +1,8 @@
-importClass(Packages.MooServerTemplate);
-importClass(Packages.MooHandlerTemplate);
-importClass(Packages.MooServletTemplate);
-importClass(Packages.MooServlet);
-importClass(Packages.RequestHandler);
-importClass(Packages.Shell);
+/* server packages */
+importClass(Packages.MooServer);
+//importClass(Packages.MooServlet);
+//importClass(Packages.MooRequestHandler);
+//importClass(Packages.Shell);
 
 importPackage(Packages.javax.servlet);
 importPackage(Packages.javax.servlet.http);
@@ -21,5 +20,3 @@ importClass(Packages.org.mortbay.jetty.ajp.Ajp13SocketConnector);
 importClass(Packages.org.mortbay.jetty.servlet.ServletHandler)
 importClass(Packages.org.mortbay.jetty.servlet.ServletMapping)
 importClass(Packages.org.mortbay.jetty.servlet.SessionHandler)
-
-//importPackage(Packages.org.mortbay.http.HttpContext);
