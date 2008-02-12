@@ -60,7 +60,8 @@ public class MooServlet extends HttpServlet
 				Request baseRequest = (request instanceof Request) ? (Request)request : HttpConnection.getCurrentConnection().getRequest();
 	            baseRequest.setHandled(true);
 
-				baseRequest.getSession(true);
+				//baseRequest.getSession(true);
+				getSessionHandler();
 				//Context cx = Context.enter();
               //response.setContentType("text/html");
               //response.setStatus(HttpServletResponse.SC_OK);
