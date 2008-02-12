@@ -1,8 +1,8 @@
 /* server packages */
 importClass(Packages.MooServer);
-//importClass(Packages.MooServlet);
-//importClass(Packages.MooRequestHandler);
-//importClass(Packages.Shell);
+importClass(Packages.MooServlet);
+importClass(Packages.RequestHandler);
+importClass(Packages.Shell);
 
 importPackage(Packages.javax.servlet);
 importPackage(Packages.javax.servlet.http);
