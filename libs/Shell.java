@@ -7,11 +7,14 @@
 // This file knows nothing about a web server, web app framework or web app.
 
 import java.io.FileInputStream;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.BufferedReader;
+
+import java.util.*;
 
 import org.mozilla.javascript.*;
 
@@ -55,6 +58,7 @@ public class Shell extends ScriptableObject {
          shell.processFile(Context.toString(args[i]));
       }
     }
+
     
     /**
      * Load a JavaScript file.

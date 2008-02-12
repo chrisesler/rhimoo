@@ -6,12 +6,11 @@ javac -classpath ${CLASSPATH} JsConnection.java
 
 javac -classpath ${CLASSPATH} RhinoLoader.java
 
-
 javac -classpath ${CLASSPATH} MooServer.java
 
-javac -classpath ${CLASSPATH} rhimoo/Server.java
-
 javac -classpath ${CLASSPATH} RequestHandler.java
+
+javac -classpath ${CLASSPATH} MooServlet.java
 
 javac -Xlint:deprecation -classpath ${CLASSPATH} Shell.java
 

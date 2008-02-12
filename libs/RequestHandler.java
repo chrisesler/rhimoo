@@ -38,7 +38,7 @@ public class RequestHandler
 
         // load the JavaScript files for the web app framework and
         // the files for the specific web app.
-        shell.loadFile("rhimoo/rhimoo.js");
+        shell.loadFile("rhimoo/routing.js");
     }
 
     public void processRequest(HttpServletRequest request, HttpServletResponse response) throws IOException
@@ -107,7 +107,7 @@ public class RequestHandler
 
         // "app" is the single global entry function of the JavaScript web app framework.
         Object[] args = {req, res};
-        shell.callGlobalFunction("app", args);
+        shell.callGlobalFunction("router", args);
 
 
 
