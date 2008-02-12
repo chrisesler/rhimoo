@@ -4,8 +4,6 @@ rootDir = new File(".");
 rootDir = new File(rootDir.getCanonicalPath());
 root = rootDir.getCanonicalPath()+"/";
 
-print(root);
-
 // include needed java packages
 load(root+"rhimoo/javaPackages.js");
 
