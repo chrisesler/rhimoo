@@ -154,14 +154,11 @@ var bootstrap = new Class({
 		});
 	},
 	
-	getDirectory: function(dir){
-		switch(dir){
-			case "views":
-			case "view":
-				return root+"views/";
-				break;
-		}
-	}
+	setDir: function(alias,dir){ rhimoo.dirs[alias] = dir; },
+	setDirs: function(obj){
+		rhimoo.dirs = $merge(rhimoo.dirs,obj);
+	},
+	getDir: function(alias){ return rhimoo.dirs[alias]; }
 	
 	
 });

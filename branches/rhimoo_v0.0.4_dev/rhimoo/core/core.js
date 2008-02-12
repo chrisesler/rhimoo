@@ -7,6 +7,8 @@ var rhimoo = {
 		deferred: []
 	},
 	
+	dirs: {},
+	
 	init: function(options){
 		print("==============================================");
 		print("  RHIMOO INITIALIZATION  ");
