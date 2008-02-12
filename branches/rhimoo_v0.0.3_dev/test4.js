@@ -45,11 +45,15 @@ var server = new Server(3000);
 
 	contexts = new ContextHandlerCollection();
 	server.setHandler(contexts);
+	
+	sessHandler = new SessionHandler();
 	         
 	root = new Context(contexts,"/",Context.SESSIONS);
+	//root.setSessionHandler(sessHandler);
 	root.addServlet(new ServletHolder(new MooServlet("app.js")), "/*");
 	
 	other = new Context(contexts,"/other",Context.SESSIONS);
+	//other.setSessionHandler(sessHandler);
 	other.addServlet(new ServletHolder(new MooServlet("apple.js")), "/*");
 
 //var holder = new ServletHolder(new MooServlet("apple.js"));
