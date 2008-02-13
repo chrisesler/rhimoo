@@ -1,6 +1,6 @@
 rhimoo.defineClass("rhimoo.template.parser",
 {
-	requires: "rhimoo.template.contexts",
+
 
   statics : {},
   	defer : function(statics)
@@ -8,7 +8,7 @@ rhimoo.defineClass("rhimoo.template.parser",
 	    print("----- loaded template parser namespace");
 	 	print("----- deferring attachment to parser engine");
 	    rhimoo.registry.deferred.push(function(){
-			print("+ attaching Tenjin to rhimoo.template.parser");
+			print("+ creating default template parser - attaching to engine object");
 			rhimoo.template.parser = new Tenjin.Engine();
 		});
 	  }

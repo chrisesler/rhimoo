@@ -13,7 +13,7 @@ rhimoo.defineClass("rhimoo.server.init",
 				ajp: 8080
 			},
 			assets: {
-				path: "/",
+				path: "/static",
 				file: "./public"
 			}
 

@@ -582,7 +582,7 @@ Tenjin.Template.prototype.statementPattern = Tenjin.Template.prototype.compileSt
 Tenjin.render = function(template_str, context) {
 	var template = new Tenjin.Template();
 	//template.convert(template_str);
-	template.convert(rhimoo.getDirectory("views")+template_str);
+	template.convert(rhimoo.getDir("views")+template_str);
 	return template.render(context);
 }
 
@@ -816,7 +816,7 @@ Tenjin.Engine.prototype = {
 	},
 
 	render: function(template_name, context, layout) {
-		template_name = rhimoo.getDirectory("views")+template_name;
+		template_name = rhimoo.getDir("views")+template_name;
 		context = this.hookContext(context);
 		var output;
 		while (true) {

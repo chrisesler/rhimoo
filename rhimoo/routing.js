@@ -1,14 +1,11 @@
-function router(req,res){
-//importPackage(java.io);
+// alias somethings to java objects since
+// we are in Rhino context
+File = java.io.File
 
-rootDir = new java.io.File(".");
-rootDir = new java.io.File(rootDir.getCanonicalPath());
+// get some directories
+rootDir = new File(".");
+rootDir = new File(rootDir.getCanonicalPath());
 root = rootDir.getCanonicalPath()+"/";
-
-print = println;
-
-// include needed java packages
-//load(root+"rhimoo/javaPackages.js");
 
 // load up mootools
 load(root+"scripts/mootools-server-1.2-1331.js");
@@ -20,6 +17,8 @@ load(root+"rhimoo/core/bootstrap.js");
 // initialize rhimoo to setup namespace
 rhimoo.init();
 
+
+
 // setup some directories
 rhimoo.setDirs({
 	'root':root,
@@ -30,11 +29,17 @@ rhimoo.setDirs({
 	'views':root+"app/views/"
 });
 
+// load db models
+load(rhimoo.getDir("models")+"model.js");
+
 // load vendors
 rhimoo.util.loadVendors();
 
 // load router
 rhimoo.loadRequired("rhimoo.routing.manager");
+
+// load template engine
+rhimoo.loadRequired("rhimoo.template.engine");
 
 // run deferred actions
 rhimoo.registry.deferred.each(function(item){
@@ -42,5 +47,3 @@ rhimoo.registry.deferred.each(function(item){
 });
 
 
-	rhimoo.router.manager.router(req,res);
-}
