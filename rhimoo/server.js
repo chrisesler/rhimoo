@@ -38,8 +38,7 @@ server = new rhimoo.server.init({
 	
 });
 
-// load controllers
-//server.loadControllers();
-
 // start it up
 server.jetty.Start();
+
+// now, it should send stuff to routing.js

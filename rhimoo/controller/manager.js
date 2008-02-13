@@ -19,7 +19,10 @@ rhimoo.defineClass("rhimoo.controller.manager",
 
 					print("+++++ CONTROLLER : "+file);
 
-					[controllerFile, controllerName] = file.match("(.*)\.js");
+					var tmp = file.match("(.*)\.js");
+					
+					var controllerFile = tmp[0];
+					var controllerName = tmp[1];
 
 					// check if object or class
 					if($type(controllerItem.controller) == "object"){
