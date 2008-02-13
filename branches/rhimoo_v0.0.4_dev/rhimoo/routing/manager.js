@@ -9,12 +9,10 @@ rhimoo.defineClass("rhimoo.routing.manager",
 		initialize: function(){	},
 		router: function(request,response){
 			var controller = rhimoo.routing.manager.getController(request.url.path);
-			//print("CONTROLLER: "+controller);
+			
 			if(rhimoo.controller.manager.controllers[controller]){
-				//print("CONTROLLER EXISTS");
 				rhimoo.controller.manager.controllers[controller].main(request,response);
 			}else{
-				//print("CONTROLLER DOES NOT EXIST");
 				rhimoo.routing.FourOhFour.main(request,response);
 			}
 		},
@@ -31,6 +29,7 @@ rhimoo.defineClass("rhimoo.routing.manager",
 	}),
 	defer: function(statics){
 		rhimoo.routing.manager = new rhimoo.routing.manager();
+		
 		router = rhimoo.routing.manager.router;
 		print("----- loaded routing manager");
 	}

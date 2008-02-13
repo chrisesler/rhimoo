@@ -1,5 +1,5 @@
 var controllerItem = {
-	path : "index",
+	path : "myapp",
 	controller : {
 		Implements: rhimoo.controller.object,
 		main: function(request, response){

@@ -2,7 +2,7 @@
 // we are in Rhino context
 File = java.io.File
 
-// get some directories
+// set root directory
 rootDir = new File(".");
 rootDir = new File(rootDir.getCanonicalPath());
 root = rootDir.getCanonicalPath()+"/";
@@ -17,8 +17,6 @@ load(root+"rhimoo/core/bootstrap.js");
 // initialize rhimoo to setup namespace
 rhimoo.init();
 
-
-
 // setup some directories
 rhimoo.setDirs({
 	'root':root,
@@ -29,7 +27,9 @@ rhimoo.setDirs({
 	'views':root+"app/views/"
 });
 
-// load db models
+// load db models - we'll make this more elegant
+// once database modeling gets more sophisticated
+// (think activerecord)
 load(rhimoo.getDir("models")+"model.js");
 
 // load vendors

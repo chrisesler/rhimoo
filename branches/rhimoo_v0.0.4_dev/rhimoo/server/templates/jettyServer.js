@@ -13,41 +13,52 @@ rhimoo.defineClass("rhimoo.server.templates.jettyServer",
 		contextHandler: null,
 		handlerCollection: null,
 		sessionHandler: null,
+		requestLogHandler: null,
 		
 		servlets: [],
 
 		Setup: function(){
 			this.server = new Server();
 
+			// CONNECTORS
 	        this.channelConnector = new SelectChannelConnector();
 	        this.channelConnector.setPort(this.ports.server);
 			this.connectors.push(this.channelConnector);
-
+			
+			this.server.setConnectors(this.toJavaArray(Connector,this.connectors));
+			
+			// if using mod_jk
 			if(this.useAJP){
 				this.ajpConnector = new Ajp13SocketConnector();
 				this.ajpConnector.setPort(this.ports.ajp);
 				this.connectors.push(this.ajpConnector);
 			}
 
-	        this.server.setConnectors(this.toJavaArray(Connector,this.connectors));
-	
-			this.contextHandler = new ContextHandlerCollection();
-	        //this.contextHandler.setHandlers(this.toJavaArray(Handler,this.contexts));
-			this.server.setHandler(this.contextHandler);
-	
-			sessHandler = new SessionHandler();
-			
-			// servlet
-			print("servlet: ON");
-			var cx = new Context(this.contextHandler,"/",Context.SESSIONS);
-			
-			var holder = new ServletHolder(new MooServlet());
-			cx.addServlet(holder, "/*");
+			// threadpool
+			var threadPool = new BoundedThreadPool();
+	        threadPool.setMaxThreads(100);
+	        this.server.setThreadPool(threadPool);
 
+			// handler collection
+	        this.handlerCollection = new HandlerCollection();
+	
+			// context handler
+			this.contextHandler = new ContextHandlerCollection();
+			//this.server.setHandler(this.contextHandler);
+	
+			// session handler
+			this.sessionHandler = new SessionHandler();
 			
-			this.contexts.push(cx);
-			
-			// EXPERIMENT
+			// request log handler
+			this.requestLogHandler = new RequestLogHandler();
+			var requestLog = new NCSARequestLog(root+"/log/jetty-yyyy_mm_dd.log");
+	        requestLog.setRetainDays(90);
+	        requestLog.setAppend(true);
+	        requestLog.setExtended(true);
+	        requestLog.setLogTimeZone("GMT");
+	        this.requestLogHandler.setRequestLog(requestLog);
+				
+			// RESOURCES
 			resources = new ResourceHandler();
 			resources.setResourceBase(this.assets.file);
 			
@@ -58,7 +69,15 @@ rhimoo.defineClass("rhimoo.server.templates.jettyServer",
 			this.contexts.push(resourceContext);
 			
 			
+			// servlet
+			print("servlet: ON");
+			var cx = new Context(this.contextHandler,"/",Context.SESSIONS);
 			
+			var holder = new ServletHolder(new MooServlet());
+			cx.addServlet(holder, "/*");
+
+			
+			this.contexts.push(cx);
 		},
 
 		Start: function(){
@@ -66,9 +85,17 @@ rhimoo.defineClass("rhimoo.server.templates.jettyServer",
 			print("  STARTING SERVER ....... hold on ");
 			print("==============================================");
 			//this.handlerCollection = new HandlerCollection();
-	        //this.handlerCollection.setHandlers(this.toJavaArray(Handler,[this.contextHandler,new DefaultHandler()]));
+	        this.handlerCollection.setHandlers(this.toJavaArray(Handler,[this.contextHandler,new DefaultHandler(),this.requestLogHandler]));
+			
+			// STATISTICS
+			this.statsHandler = new StatisticsHandler();
+	        this.statsHandler.addHandler(this.handlerCollection);
+			
+			
+			this.server.addHandler(this.statsHandler);
 
 	        this.server.setStopAtShutdown(true);
+			
 			this.server.start();
 			
 			
