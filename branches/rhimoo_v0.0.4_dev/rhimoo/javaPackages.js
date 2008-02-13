@@ -3,6 +3,7 @@ importClass(Packages.MooServer);
 importClass(Packages.MooServlet);
 importClass(Packages.RequestHandler);
 importClass(Packages.Shell);
+importClass(Packages.JsConnection);
 
 importPackage(Packages.javax.servlet);
 importPackage(Packages.javax.servlet.http);

@@ -1,18 +1,19 @@
 var controllerItem = {
 	path : "index",
 	controller : {
+		Implements: rhimoo.controller.object,
 		main: function(request, response){
-		
-			html = readFile("views/index.html");
-			html.toString();
+			
+			var context = {};
+			context.articles = ArticleModel.findAll();
+			
+			response.headers = {contentType: 'text/html',
+			                      status: 200};
 
-			this.headers = {
-				contentType: 'text/html',
-			    status: 200
-			};
-
-			this.body =  html;
+			response.body = this.parser.render("synergy.tpl",context);
 		}
+		
+		
 	}
 	
 };

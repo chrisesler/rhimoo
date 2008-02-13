@@ -25,15 +25,16 @@ public class Shell extends ScriptableObject {
     public Shell() {
         cx = Context.enter();
         cx.initStandardObjects(this);
+		
 
         // host objects --------------
-
+		
         // Give easy access to the global object by making a global property named "global".
         // This is the same as how "window" is used in browser scripting.
         defineProperty("global", this, ScriptableObject.DONTENUM);
         
         // global functions
-        String[] names = {"load"};
+        String[] names = {"load","print"};
         defineFunctionProperties(names, Shell.class, ScriptableObject.DONTENUM);
     }
 
@@ -42,6 +43,7 @@ public class Shell extends ScriptableObject {
     }
     
     public Context getContext() {
+		Scriptable scope = new ImporterTopLevel(cx);
         return cx;
     }
     
@@ -57,6 +59,12 @@ public class Shell extends ScriptableObject {
       for (int i = 0; i < args.length; i++) {
          shell.processFile(Context.toString(args[i]));
       }
+    }
+
+	public static void print(Context cx, Scriptable thisObj,
+                            Object[] args, Function funObj)
+    {
+      System.out.println(args[0]);
     }
 
     

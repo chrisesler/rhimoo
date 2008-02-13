@@ -1,15 +1,14 @@
 rhimoo.defineClass("rhimoo.controller.manager",
 {
+	requires: ["rhimoo.controller.object"],
+	
   statics : new Class({
 		controllers: {},
 		initialize: function(){
 			this.loadControllers();
 		},		
 		loadControllers : function(){
-			print("==============================================");
-			print("  LOADING CONTROLLERS ");
-			print("==============================================");
-			
+
 			var controllerDir = new File(rhimoo.getDir('controllers'));
 			var fileList = controllerDir.list();
 
@@ -18,10 +17,11 @@ rhimoo.defineClass("rhimoo.controller.manager",
 				if(file.substr(0,1) != "."){
 					load(rhimoo.getDir('controllers')+file);
 
-					print("HANDLER : "+file);
+					print("+++++ CONTROLLER : "+file);
 
 					[controllerFile, controllerName] = file.match("(.*)\.js");
 
+					// check if object or class
 					if($type(controllerItem.controller) == "object"){
 						var tmp = new Class(controllerItem.controller);
 						this.controllers[controllerName] = new tmp();
