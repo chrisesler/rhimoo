@@ -19,6 +19,7 @@ var rhimoo = {
 		rhimoo.loadRequired([
 			'rhimoo.util.idGenerator',
 			'rhimoo.util.include',
+			'rhimoo.util.substr',
 			'rhimoo.util.loadVendors'
 		]);	
 	}
