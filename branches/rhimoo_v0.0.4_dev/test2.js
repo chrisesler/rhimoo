@@ -10,9 +10,19 @@ importClass(Packages.MooServer,
 			
 load("scripts/mootools-server-1.2-1331.js");
 
-var fred = new Class({ 
-	__noSuchMethod__: function f(name, args)
-{ print(name,args); } 
+fred = new Class({ 
+	
 });
 
-fred.foobar(3,4);
+fr = new fred();
+mop = {};
+mop.get = function(thisObj,propName) {
+   if ((typeof thisObj[propName]) == 'function') {
+      return thisObj[propName]();
+   }
+   else return thisObj[propName];
+};
+
+fr.__metaobject__ = mop;
+
+fr.foobar(3,4);
