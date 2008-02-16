@@ -18,4 +18,6 @@ var properties = new java.util.Properties();
 var propFile = new FileInputStream(new File(root+"config/server.properties"));
 properties.load(propFile);
 
-System.out.println(properties.getProperty("server.name"));
+//System.out.println(Context.javaToJS(properties.getProperty("server")));
+
+for (i in properties.propertyNames()) { print(i) }

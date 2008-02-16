@@ -10,19 +10,34 @@ importClass(Packages.MooServer,
 			
 load("scripts/mootools-server-1.2-1331.js");
 
-fred = new Class({ 
-	
+var fredMetas = new Class({
+	get: function(name, args)
+	{ print(name,args); },
+
+	set: function(thisObj,prop,value) {
+	  if (prop == 'salary') {
+	    throw new Error('Warning: Salary is a read-only property');
+	  }
+
+		print("*** SAVED "+prop+": "+value);
+		thisObj[prop]=value;
+	}
 });
 
-fr = new fred();
-mop = {};
-mop.get = function(thisObj,propName) {
-   if ((typeof thisObj[propName]) == 'function') {
-      return thisObj[propName]();
-   }
-   else return thisObj[propName];
-};
+var fred = new Class({
+	temp: null,
+	salary: 10,
+	initialize: function(){
+		
+		this.__metaobject__ = new fredMetas();
+		
+	},
+	__metaobject__: {}
+});
 
-fr.__metaobject__ = mop;
 
-fr.foobar(3,4);
+
+var Ed = new fred();
+
+Ed.temp = "WOOT THERE IT IS!";
+Ed.salary = 25;
