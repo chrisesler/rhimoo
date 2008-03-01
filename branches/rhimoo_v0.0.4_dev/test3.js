@@ -20,4 +20,4 @@ rhimoo.init();
 // load some required items
 rhimoo.loadRequired("rhimoo.config");
 
-print(rhimoo.config.registry.toSource());
+print(rhimoo.config.database.toSource());
