@@ -6,39 +6,11 @@ rhimoo.defineClass("rhimoo.config",
 	registry: {},
 	properties: null,
 	initialize: function(){
-		
-		var metas = {
-			set : function(thisObj,prop,value) {
-			      
-				print("PROP: "+prop);
-				print("VALUE: "+value);
-				thisObj[prop] = value;
 
-			},
-			get : function(thisObj,prop) {
-			      
-				print("PROP: "+prop);
-				return thisObj[prop];
-				//print(thisObj.properties.getProperty(prop).propertyName());
-			   //thisObj[prop]=value;
-			}
-			/*,
-			hasInstanceOf : function(thisObj,instance) {
-			  //if (instance.mickey == 'mouse') return true;
-			  //else return (instance instanceof thisObj);
-				print("INSTANCE: "+instance);
-			}*/
-		}
-		
-		this.__metaobject__ = metas;
-		this.registry.__metaobject__ = metas;
 
 		this.properties = new java.util.Properties();
 		var propFile = new FileInputStream(new File(root+"config/server.properties"));
 		this.properties.load(propFile);
-
- 
-		print(this.properties.hashCode());
 
 		var tmp = this.properties.keySet().toString();
 		tmp = tmp.substring(1,tmp.length()-1);
@@ -55,16 +27,22 @@ rhimoo.defineClass("rhimoo.config",
 					item = item.trim();
 					if(idx == 0){
 						this.prop = null;
-						if(this.registry[item]){
-							this.prop = this.registry[item];
+						if(this[item]){
+							this.prop = this[item];
 						}else{
-							this.prop = this.registry[item] = {};
+							this.prop = this[item] = {};
 						}
 
 					}else{
 
 						if(total == (idx+1)){
 							propValue = new String(this.properties.get(new java.lang.String(it)));
+							if(propValue == "true"){
+								propValue = new Boolean(true);
+							}
+							if(propValue == "false"){
+								propValue = new Boolean(false);
+							}
 							this.prop[item] = propValue;
 						}else{
 							this.prop = this.prop[item] = {};
@@ -72,7 +50,7 @@ rhimoo.defineClass("rhimoo.config",
 					}
 				},this);
 			}else{
-				this.registry[it] = this.properties.getProperty(it.trim());
+				this[it] = this.properties.getProperty(it.trim());
 			}
 		},this);
 
