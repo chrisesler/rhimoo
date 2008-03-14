@@ -75,6 +75,7 @@ public class RequestHandler
         ScriptableObject.defineProperty(req, "url", url, 0); // note zero means no attributes
 
         ScriptableObject.defineProperty(url, "method", request.getMethod(), 0);
+		//ScriptableObject.defineProperty(url, "remoteUser", request.getRemoteUser(), 0);
         ScriptableObject.defineProperty(url, "scheme", request.getScheme(), 0);
         ScriptableObject.defineProperty(url, "server", request.getServerName(), 0);
         ScriptableObject.defineProperty(url, "port", request.getServerPort(), 0);
@@ -84,9 +85,12 @@ public class RequestHandler
         Scriptable parameters = shell.getContext().newObject(shell);
         ScriptableObject.defineProperty(req, "parameters", parameters, 0);
 
+		// SESSION
 		Scriptable session = shell.getContext().newObject(shell);
         ScriptableObject.defineProperty(req, "session", session, 0);
 		ScriptableObject.defineProperty(session, "obj", request.getSession(true), 0);
+		ScriptableObject.defineProperty(session, "remoteUser", request.getRemoteUser(), 0);
+
         
         Enumeration paramNames = request.getParameterNames();
         while(paramNames.hasMoreElements()) {
@@ -118,15 +122,26 @@ public class RequestHandler
 
         Scriptable headers = Context.toObject(ScriptableObject.getProperty(res, "headers"), shell);
 
-        String contentType = Context.toString(ScriptableObject.getProperty(headers, "contentType"));
-        response.setContentType(contentType);
+        String authenticate = Context.toString(ScriptableObject.getProperty(headers, "authenticate"));
 
         Double status = Context.toNumber(ScriptableObject.getProperty(headers, "status"));
         response.setStatus(status.intValue());
 
-        String body = Context.toString(ScriptableObject.getProperty(res, "body"));
-        response.setContentLength(body.length());
-        response.getWriter().println(body);
+		if(authenticate == "true"){
+				response.setStatus(response.SC_UNAUTHORIZED);
+				String realm = Context.toString(ScriptableObject.getProperty(headers, "realm"));
+				response.setHeader("WWW-Authenticate",
+				     "BASIC realm=\""+realm+"\"");
+			
+		}else{
+
+			String contentType = Context.toString(ScriptableObject.getProperty(headers, "contentType"));
+	        response.setContentType(contentType);
+	
+        	String body = Context.toString(ScriptableObject.getProperty(res, "body"));
+        	response.setContentLength(body.length());
+        	response.getWriter().println(body);
+		}
     }
 
 }

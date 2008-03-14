@@ -15,6 +15,8 @@ rhimoo.defineClass("rhimoo.server.templates.jettyServer",
 		sessionHandler: null,
 		requestLogHandler: null,
 		
+		sh: null,
+		
 		servlets: [],
 
 		Setup: function(){
@@ -33,6 +35,25 @@ rhimoo.defineClass("rhimoo.server.templates.jettyServer",
 				this.ajpConnector.setPort(this.ports.ajp);
 				this.connectors.push(this.ajpConnector);
 			}
+			
+			//TEST//
+				constraint = new Constraint();
+				constraint.setName(new BasicAuthenticator());;
+				constraint.setRoles(["user","admin","moderator"]);
+				constraint.setAuthenticate(true);
+
+				cm = new ConstraintMapping();
+				cm.setConstraint(constraint);
+				cm.setPathSpec("/*");
+
+				this.sh = new SecurityHandler();
+				this.sh.setUserRealm(new HashUserRealm("MyRealm",root+"config/realm.properties"));
+				this.sh.setConstraintMappings(this.toJavaArray(ConstraintMapping,[cm]));
+				
+				/*userRealm = new HashUserRealm();
+				userRealm.setName("protected-area");
+				userRealm.setConfig(root+"config/realm.properties");
+				this.server.setUserRealms(this.toJavaArray(UserRealm,[userRealm]));*/
 
 			// threadpool
 			var threadPool = new BoundedThreadPool();
@@ -82,12 +103,12 @@ rhimoo.defineClass("rhimoo.server.templates.jettyServer",
 
 		Start: function(){
 			print("==============================================");
-			print("  STARTING SERVER ....... hold on ");
+			print("  STARTING JETTY WEB SERVER ....... hold on ");
 			print("==============================================");
 			//this.handlerCollection = new HandlerCollection();
-	        this.handlerCollection.setHandlers(this.toJavaArray(Handler,[this.contextHandler,new DefaultHandler(),this.requestLogHandler]));
+	        this.handlerCollection.setHandlers(this.toJavaArray(Handler,[this.sh, this.contextHandler,new DefaultHandler(),this.requestLogHandler]));
 			
-			// STATISTICS
+			// STATISTICS - may or may not be necessary
 			this.statsHandler = new StatisticsHandler();
 	        this.statsHandler.addHandler(this.handlerCollection);
 			

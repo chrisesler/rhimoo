@@ -20,9 +20,6 @@ rhimoo.init();
 // load some required items
 rhimoo.loadRequired("rhimoo.server.init");
 
-// load vendors
-rhimoo.util.loadVendors();
-
 // run deferred actions
 rhimoo.registry.deferred.each(function(item){
 	item();
