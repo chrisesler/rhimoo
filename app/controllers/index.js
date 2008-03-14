@@ -4,6 +4,7 @@ var controllerItem = {
 		Implements: rhimoo.controller.object,
 		main: function(request, response){
 			
+			//request.session.obj.putValue('test','woot a test');
 			var context = {};
 			context.articles = ArticleModel.findAll();
 			

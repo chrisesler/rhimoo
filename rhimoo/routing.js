@@ -15,7 +15,7 @@ load(root+"rhimoo/core/core.js");
 load(root+"rhimoo/core/bootstrap.js");
 
 // initialize rhimoo to setup namespace
-rhimoo.init();
+rhimoo.appinit();
 
 // setup some directories
 rhimoo.setDirs({
