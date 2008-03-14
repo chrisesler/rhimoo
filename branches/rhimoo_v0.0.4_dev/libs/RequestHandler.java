@@ -122,26 +122,18 @@ public class RequestHandler
 
         Scriptable headers = Context.toObject(ScriptableObject.getProperty(res, "headers"), shell);
 
-        String authenticate = Context.toString(ScriptableObject.getProperty(headers, "authenticate"));
-
+       
         Double status = Context.toNumber(ScriptableObject.getProperty(headers, "status"));
         response.setStatus(status.intValue());
 
-		if(authenticate == "true"){
-				response.setStatus(response.SC_UNAUTHORIZED);
-				String realm = Context.toString(ScriptableObject.getProperty(headers, "realm"));
-				response.setHeader("WWW-Authenticate",
-				     "BASIC realm=\""+realm+"\"");
-			
-		}else{
 
-			String contentType = Context.toString(ScriptableObject.getProperty(headers, "contentType"));
-	        response.setContentType(contentType);
-	
-        	String body = Context.toString(ScriptableObject.getProperty(res, "body"));
-        	response.setContentLength(body.length());
-        	response.getWriter().println(body);
-		}
+		String contentType = Context.toString(ScriptableObject.getProperty(headers, "contentType"));
+        response.setContentType(contentType);
+
+       	String body = Context.toString(ScriptableObject.getProperty(res, "body"));
+       	response.setContentLength(body.length());
+       	response.getWriter().println(body);
+		
     }
 
 }
