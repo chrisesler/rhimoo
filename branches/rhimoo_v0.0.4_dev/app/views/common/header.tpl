@@ -5,7 +5,12 @@
 <title>RHIMOO</title>
 
 <link href="/static/assets/css/default.css" rel="stylesheet" type="text/css" />
-
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-278350-31";
+urchinTracker();
+</script>
 </head>
 
 <body>
