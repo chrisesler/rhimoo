@@ -1,9 +1,3 @@
-<html>
-<head>
-	<title>Article Index YAY</title>
-	<style>dt{font-weight:bold;}</style>
-</head>
-<body>
 
 <h1>Synergy Blog 2</h1>
 <dl>
@@ -15,6 +9,3 @@
 <br />
 <br />
 
-
-</body>
-</html>

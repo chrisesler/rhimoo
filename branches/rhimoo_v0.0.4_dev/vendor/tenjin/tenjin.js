@@ -710,7 +710,9 @@ Tenjin.Engine.prototype = {
 	},
 
 	findTemplateFile: function(filename) {
+		print('FILENAME'+filename);
 		if (this.path) {
+			print('FILEPATH'+this.path);
 			var path = this.path;
 			for (var i = 0, n = this.path.length; i < n; i++) {
 				var dir = path[i];
