@@ -1,0 +1,146 @@
+/* BASIC RESETS */
+body {
+	margin: 0;
+	padding: 0;
+	font: 12px "trebuchet ms","Lucida Grande", "Arial", "Helvetica", "Verdana", "sans-serif";
+
+	background: #333333 url(../images/BG-umber.gif) top left repeat-x;
+	color: #40668c;
+	
+}
+
+
+/*redefine*/
+
+::-moz-selection {
+	background: #111;
+	color: #eee;
+}
+
+::selection {
+	background: #111;
+	color: #eee;
+}
+
+h1, h2, h3, h4, p, ul {
+	margin: 0;
+	padding: 0;
+	font-weight: normal;
+	list-style: none;
+}
+
+h1, h2, h3, h4, strong {
+	color: #013366;
+}
+
+a:link, a:visited {
+	color: #00457b;
+}
+
+a:hover, a:active {
+	color: #00457b;
+}
+
+h1 span,
+h2 span {
+	display: none;
+}
+
+p {
+	padding: 5px 0;
+	line-height: 1.3;
+}
+
+a {
+	outline: none;
+	font-weight: bold;
+}
+
+form, table {
+	margin: 0;
+	padding: 0;
+}
+
+img { border: none; }
+
+/* UTILITY STYLES */
+
+.clr {
+	display: block;
+	clear: both;
+}
+
+
+.hdn { display: none; }
+
+.Absolute { position: absolute; }
+.Relative { position: relative; }
+.floatL { float: left; }
+.floatR { float: right; }
+
+.Bold { font-weight: bold; }
+
+.MT_10 { margin-top: 10px; }
+.MT_15 { margin-top: 15px; }
+.MT_20 { margin-top: 20px; }
+.MT_25 { margin-top: 25px; }
+.MT_30 { margin-top: 30px; }
+.MT_35 { margin-top: 35px; }
+.MT_40 { margin-top: 40px; }
+.MT_45 { margin-top: 45px; }
+.MT_50 { margin-top: 50px; }
+
+hr.keyline { 
+	height: 1px; 
+	border-top: 1px solid #e9e4c8; 
+	margin: 15px 0px;
+}
+
+div.logobox {
+	border: 2px solid #e9e4c8;
+	margin: 15px;
+	padding: 10px;
+	text-align: center;
+}
+
+div.yellowBox {
+	background: #e9e4c8;
+	padding: 5px;
+	text-align: center;
+}
+
+
+/*content*/
+
+#container {
+	position: relative;
+	width: 800px;
+	margin: 0px auto 10px;
+}
+
+#content {
+	width: 600px;
+	position: relative;
+	z-index: 10000;
+	background: #1d1d20;
+	padding-right: 45px;
+}
+
+#top_bar { positin: relative; }
+
+#top_bar h1 {
+	width: 451px;
+	height: 186px;
+	background: url(../images/logo-rhimoo.gif) top left no-repeat;
+}
+
+#fred { 
+	position: absolute;
+	width: 400px;
+	height: 460px;
+	background: url(../images/fred.gif) top left no-repeat;
+	top: 20px;
+	right: -30px;
+	z-index: 1;
+}
+

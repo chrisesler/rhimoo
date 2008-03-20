@@ -36,6 +36,8 @@ rhimoo.defineClass("rhimoo.server.templates.jettyServer",
 				this.connectors.push(this.ajpConnector);
 			}
 			
+			this.server.setConnectors(this.toJavaArray(Connector,this.connectors));
+			
 			//TEST//
 				constraint = new Constraint();
 				constraint.setName(new BasicAuthenticator());;
@@ -44,7 +46,7 @@ rhimoo.defineClass("rhimoo.server.templates.jettyServer",
 
 				cm = new ConstraintMapping();
 				cm.setConstraint(constraint);
-				cm.setPathSpec("/*");
+				cm.setPathSpec("/admin/*");
 
 				this.sh = new SecurityHandler();
 				this.sh.setUserRealm(new HashUserRealm("MyRealm",root+"config/realm.properties"));

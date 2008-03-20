@@ -24,7 +24,8 @@ rhimoo.setDirs({
 	'controllers':root+"app/controllers/",
 	'helpers':root+"app/helpers/",
 	'models':root+"app/models/",
-	'views':root+"app/views/"
+	'views':root+"app/views/",
+	'layouts':root+"app/views/layouts/"
 });
 
 // load db models - we'll make this more elegant
