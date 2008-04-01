@@ -25,7 +25,8 @@ rhimoo.setDirs({
 	'helpers':root+"app/helpers/",
 	'models':root+"app/models/",
 	'views':root+"app/views/",
-	'layouts':root+"app/views/layouts/"
+	'layouts':root+"app/views/layouts/",
+	'core':root+"rhimoo/"
 });
 
 // load db models - we'll make this more elegant
@@ -46,5 +47,8 @@ rhimoo.loadRequired("rhimoo.template.engine");
 rhimoo.registry.deferred.each(function(item){
 	item();
 });
+
+rhimoo.registry.deferred = null;
+
 
 

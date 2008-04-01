@@ -46,5 +46,3 @@ rhimoo.defineClass("rhimoo.controller.manager",
 		print("----- loaded controller manager");
 	}
 });
-
-include = rhimoo.util.include;

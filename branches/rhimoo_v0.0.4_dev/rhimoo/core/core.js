@@ -4,7 +4,8 @@ var rhimoo = {
 	registry: {
 		Id: [],
 		Class: {},
-		deferred: []
+		deferred: [],
+		includes: []
 	},
 	
 	dirs: {},
@@ -30,6 +31,7 @@ var rhimoo = {
 			'rhimoo.util.idGenerator',
 			'rhimoo.util.include',
 			'rhimoo.util.substr',
+			'rhimoo.php.init',
 			'rhimoo.util.loadVendors'
 		]);	
 	}

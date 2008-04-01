@@ -2,8 +2,10 @@ var DATABASE = {
 
     database: 'blog_development',
     host: 'localhost',
-    username: 'rhimodba',
-    password: 'abc123'
+    //username: 'rhimodba',
+    //password: 'abc123'
+	username: 'root',
+    password: ''
 
 };
 
