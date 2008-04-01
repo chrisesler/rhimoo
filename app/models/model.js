@@ -2,8 +2,8 @@ var DATABASE = {
 
     database: 'blog_development',
     host: 'localhost',
-    username: 'root',
-    password: ''
+    username: 'rhimodba',
+    password: 'abc123'
 
 };
 

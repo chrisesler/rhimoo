@@ -30,7 +30,7 @@ server = new rhimoo.server.init({
 	useAJP: true,
 	ports: {
 		server: 3000,
-		ajp: 8080
+		ajp: 8010
 	}
 	
 });

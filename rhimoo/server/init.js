@@ -7,10 +7,10 @@ rhimoo.defineClass("rhimoo.server.init",
   statics : new Class({
 		Implements: Options,
 		options: {
-			useAJP: false,
+			useAJP: true,
 			ports: {
 				server: 3000,
-				ajp: 8080
+				ajp: 8010
 			},
 			assets: {
 				path: "/static",
