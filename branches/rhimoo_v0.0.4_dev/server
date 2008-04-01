@@ -7,7 +7,7 @@ CLASSPATH="./libs/:./libs/js.jar:./libs/servlet-api-2.5-6.1.6.jar:./libs/jetty-u
 #java -classpath ${CLASSPATH} org.mozilla.javascript.tools.shell.Main test.js
 
 # uncomment to set JAVA_HOME variable
-#JAVA_HOME=/opt/lampp/jdk1.5.0_10
+JAVA_HOME=/opt/lampp/jdk1.5.0_10
 
 if [ "$JAVA_HOME" ]; then
    JAVACMD="$JAVA_HOME/bin/java"
