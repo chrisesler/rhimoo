@@ -12,6 +12,5 @@ rhimoo.defineClass("rhimoo.util.substr",
 	},
 	defer: function(statics){
 		substr = rhimoo.util.substr;
-		print("----- loaded routing manager");
 	}
 });
