@@ -2,7 +2,7 @@ var controllerItem = {
 	path : "myapp",
 	controller : {
 		Implements: rhimoo.controller.object,
-		layout: rhimoo.getDir('layouts')+"main.tpl",
+		layout: "main",
 		main: function(request, response){
 			
 			//request.session.obj.putValue('test','woot a test');
