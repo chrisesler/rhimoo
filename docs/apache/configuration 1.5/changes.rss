@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<rss version="0.91">
+  <channel>
+    <title>Changes report</title>
+    <link>http://commons.apache.org/configuration/</link>
+    <description>Changes report</description>
+    <language>en-us</language>
+    <copyright>Copyright 2007 The Apache Software Foundation</copyright>
+    <item>
+      <title>42 change(s) for version 1.5</title>
+      <link>http://commons.apache.org/configuration//changes-report.html#1_5</link>
+      <description>
+        <table border="1">
+          <tr>
+            <th style="width:50px">Type</th>
+            <th>Changes</th>
+            <th style="width:70px">By</th>
+          </tr>
+          <tr>
+            <td>update</td>
+            <td>Some of the dependencies in the m2 pom have been updated to be more consistent. Thanks to Jörg Schaible .</td>
+            <td>
+              <a href="http://commons.apache.org/configuration//team-list.html#oheger">oheger</a>
+            </td>
+          </tr>
+          <tr>
+            <td>update</td>
+            <td>The dependency to commons-logging was updated to the current version 1.1. Older versions of commons-logging will still work. Thanks to Jörg Schaible .</td>
+            <td>
+              <a href="http://commons.apache.org/configuration//team-list.html#oheger">oheger</a>
+            </td>
+          </tr>
+          <tr>
+            <td>add</td>
+            <td>A new method interpolatedConfiguration() was added to AbstractConfiguration. This method returns a configuration with the same type and content as the original configuration, however all variables have been resolved. Fixes
+              <a href="http://issues.apache.org/jira/browse/CONFIGURATION-273">CONFIGURATION-273</a>.</td>
+            <td>
+              <a href="http://commons.apache.org/configuration//team-list.html#oheger">oheger</a>
+            </td>
+          </tr>
+          <tr>
+            <td>fix</td>
+            <td>Resolving of variables with the prefix const (constant fields) caused a ClassCastException under certain circumstances if non-String fields were involved. This has been fixed. Fixes
+              <a href="http://issues.apache.org/jira/browse/CONFIGURATION-299">CONFIGURATION-299</a>.</td>
+            <td>
+              <a href="http://commons.apache.org/configuration//team-list.html#oheger">oheger</a>
+            </td>
+          </tr>
+          <tr>
+            <td>update</td>
+            <td>The dependencies to commons-codec and commons-jxpath have been marked as optional. They are not required by the core classes. Thanks to Nicolas De Loof .</td>
+            <td>
+              <a href="http://commons.apache.org/configuration//team-list.html#oheger">oheger</a>
+            </td>
+          </tr>
+          <tr>
+            <td>add</td>
+            <td>There is a new configuration implementation EnvironmentConfiguration, which provides access to (OS) environment variables. On Java &gt;= 1.5 this class can be directly used; on earlier versions a dependency to ant is required. Fixes
+              <a href="http://issues.apache.org/jira/browse/CONFIGURATION-284">CONFIGURATION-284</a>. Thanks to Nicolas De Loof .</td>
+            <td>
+              <a href="http://commons.apache.org/configuration//team-list.html#oheger">oheger</a>
+            </td>
+          </tr>
+          <tr>
+            <td>fix</td>
+            <td>A bug in XMLConfiguration caused that attributes of the root element could not be changed. This has been fixed. Fixes
+              <a href="http://issues.apache.org/jira/browse/CONFIGURATION-296">CONFIGURATION-296</a>.</td>
+            <td>
+              <a href="http://commons.apache.org/configuration//team-list.html#oheger">oheger</a>
+            </td>
+          </tr>
+          <tr>
+            <td>add</td>
+            <td>A new method registerEntityId() was added to XMLConfiguration, which allows to register URLs for entities. A new default implementation of the EntityResolver interface handles these entities automatically. Fixes
+              <a href="http://issues.apache.org/jira/browse/CONFIGURATION-290">CONFIGURATION-290</a>.</td>
+            <td>
+              <a href="http://commons.apache.org/configuration//team-list.html#oheger">oheger</a>
+            </td>
+          </tr>
+          <tr>
+            <td>fix</td>
+            <td>The subset() method of HierarchicalConfiguration now takes the value of the subset's root node into account if it is not ambigous. Fixes
+              <a href="http://issues.apache.org/jira/browse/CONFIGURATION-295">CONFIGURATION-295</a>.</td>
+            <td>
+              <a href="http://commons.apache.org/configuration//team-list.html#oheger">oheger</a>
+            </td>
+          </tr>
+          <tr>
+            <td>fix</td>
+            <td>Nodes added to a XMLConfiguration using the addNodes() method could lose their value when the configuration was saved. This is now fixed. Fixes
+              <a href="http://issues.apache.org/jira/browse/CONFIGURATION-294">CONFIGURATION-294</a>.</td>
+            <td>
+              <a href="http://commons.apache.org/configuration//team-list.html#oheger">oheger</a>
+            </td>
+          </tr>
+          <tr>
+            <td>fix</td>
+            <td>New copy() and append() methods have been added to AbstractConfiguration. They replace the methods with the same names in ConfigurationUtils, which do not handle all features of AbstractConfiguration properly (e.g. list delimiters in property values are incorrectly treated). To avoid such problems, the new methods should be used. Fixes
+              <a href="http://issues.apache.org/jira/browse/CONFIGURATION-272">CONFIGURATION-272</a>.</td>
+            <td>
+              <a href="http://commons.apache.org/configuration//team-list.html#oheger">oheger</a>
+            </td>
+          </tr>
+          <tr>
+            <td>fix</td>
+            <td>The addNodes() method of hierarchical file-based configurations now correctly triggers an auto save. Fixes
+              <a href="http://issues.apache.org/jira/browse/CONFIGURATION-291">CONFIGURATION-291</a>.</td>
+            <td>
+              <a href="http://commons.apache.org/configuration//team-list.html#oheger">oheger</a>
+            </td>
+          </tr>
+          <tr>
+            <td>fix</td>
+            <td>HierarchicalConfiguration.addNodes() now resets the reference property of all nodes to be added. This fixes a problem with XMLConfiguration, which now detects the added nodes as new and treats them correctly when the configuration is saved. Fixes
+              <a href="http://issues.apache.org/jira/browse/CONFIGURATION-287">CONFIGURATION-287</a>.</td>
+            <td>
+              <a href="http://commons.apache.org/configuration//team-list.html#oheger">oheger</a>
+            </td>
+          </tr>
+          <tr>
+            <td>add</td>
+            <td>DefaultConfigurationBuilder will now notify registered error listeners about optional configuration sources that could not be created. Before exceptions thrown by optional configurations were swallowed Fixes
+              <a href="http://issues.apache.org/jira/browse/CONFIGURATION-285">CONFIGURATION-285</a>.</td>
+            <td>
+              <a href="http://commons.apache.org/configuration//team-list.html#oheger">oheger</a>
+            </td>
+          </tr>
+          <tr>
+            <td>fix</td>
+            <td>ConfigurationUtils.convertToHierarchical() now correctly deals with property values containing escaped list delimiters. This also affects CombinedConfiguration when sub configurations with such property values are contained. Fixes
+              <a href="http://issues.apache.org/jira/browse/CONFIGURATION-283">CONFIGURATION-283</a>.</td>
+            <td>
+              <a href="http://commons.apache.org/configuration//team-list.html#oheger">oheger</a>
+            </td>
+          </tr>
+          <tr>
+            <td>fix</td>
+            <td>AbstractConfiguration.addProperty() now correctly deals with list and array properties if delimiter parsing is disabled. Fixes
+              <a href="http://issues.apache.org/jira/browse/CONFIGURATION-275">CONFIGURATION-275</a>.</td>
+            <td>
+              <a href="http://commons.apache.org/configuration//team-list.html#oheger">oheger</a>
+            </td>
+          </tr>
+          <tr>
+            <td>fix</td>
+            <td>The default expression engine used by HierarchicalConfiguration instances is now lazily initialized. This avoids NullPointerExceptions in certain server environments after a redeploy. Fixes
+              <a href="http://issues.apache.org/jira/browse/CONFIGURATION-282">CONFIGURATION-282</a>.</td>
+            <td>
+              <a href="http://commons.apache.org/configuration//team-list.html#oheger">oheger</a>
+            </td>
+          </tr>
+          <tr>
+            <td>fix</td>
+            <td>Cycles in the JNDI tree no longer cause a stack overflow in JNDIConfiguration. Fixes
+              <a href="http://issues.apache.org/jira/browse/CONFIGURATION-281">CONFIGURATION-281</a>.</td>
+            <td>
+              <a href="http://commons.apache.org/configuration//team-list.html#oheger">oheger</a>
+            </td>
+          </tr>
+          <tr>
+            <td>add</td>
+            <td>The base implementation of clear() in AbstractConfiguration now checks for a potential UnsupportedOperationException when iterating over the existing properties. Fixes
+              <a href="http://issues.apache.org/jira/browse/CONFIGURATION-277">CONFIGURATION-277</a>.</td>
+            <td>
+              <a href="http://commons.apache.org/configuration//team-list.html#oheger">oheger</a>
+            </td>
+          </tr>
+          <tr>
+            <td>fix</td>
+            <td>Using file-based configurations in auto-save mode together with a reloading strategy could cause data loss. This has been fixed. Fixes
+              <a href="http://issues.apache.org/jira/browse/CONFIGURATION-280">CONFIGURATION-280</a>. Thanks to Roman Kurmanowytsch .</td>
+            <td>
+              <a href="http://commons.apache.org/configuration//team-list.html#oheger">oheger</a>
+            </td>
+          </tr>
+          <tr>
+            <td>fix</td>
+            <td>A PropertiesConfiguration that was created from a non existing file lost its content when it was saved. This problem has been solved. Fixes
+              <a href="http://issues.apache.org/jira/browse/CONFIGURATION-279">CONFIGURATION-279</a>.</td>
+            <td>
+              <a href="http://commons.apache.org/configuration//team-list.html#oheger">oheger</a>
+            </td>
+          </tr>
+          <tr>
+            <td>add</td>
+            <td>A new getSource() method was added to CompositeConfiguration and CombinedConfiguration, which returns the child configuration, in which a given property is defined. Fixes
+              <a href="http://issues.apache.org/jira/browse/CONFIGURATION-215">CONFIGURATION-215</a>.</td>
+            <td>
+              <a href="http://commons.apache.org/configuration//team-list.html#oheger">oheger</a>
+            </td>
+          </tr>
+          <tr>
+            <td>fix</td>
+            <td>PropertiesConfiguration now supports escaping the escape character for list delimiters. Fixes
+              <a href="http://issues.apache.org/jira/browse/CONFIGURATION-274">CONFIGURATION-274</a>.</td>
+            <td>
+              <a href="http://commons.apache.org/configuration//team-list.html#oheger">oheger</a>
+            </td>
+          </tr>
+          <tr>
+            <td>fix</td>
+            <td>PropertiesConfiguration no longer escapes the list delimiter on saving if the list delimiter has been disabled. Fixes
+              <a href="http://issues.apache.org/jira/browse/CONFIGURATION-269">CONFIGURATION-269</a>.</td>
+            <td>
+              <a href="http://commons.apache.org/configuration//team-list.html#ebourg">ebourg</a>
+            </td>
+          </tr>
+          <tr>
+            <td>fix</td>
+            <td>List properties and properties containing interpolated variables are now properly saved by INIConfiguration. Fixes
+              <a href="http://issues.apache.org/jira/browse/CONFIGURATION-270">CONFIGURATION-270</a>.</td>
+            <td>
+              <a href="http://commons.apache.org/configuration//team-list.html#ebourg">ebourg</a>
+            </td>
+          </tr>
+          <tr>
+            <td>update</td>
+            <td>When delimiter parsing was disabled for XMLConfiguration, saving and loading the configuration accidently added escape characters to properties containing the list delimiter character. This has been fixed. It is now also possible to escape the escape character itself. Fixes
+              <a href="http://issues.apache.org/jira/browse/CONFIGURATION-268">CONFIGURATION-268</a>.</td>
+            <td>
+              <a href="http://commons.apache.org/configuration//team-list.html#oheger">oheger</a>
+            </td>
+          </tr>
+          <tr>
+            <td>update</td>
+            <td>The return value of FileConfiguration.getFile() is now always consistent with the result of getURL(). Fixes
+              <a href="http://issues.apache.org/jira/browse/CONFIGURATION-253">CONFIGURATION-253</a>.</td>
+            <td>
+              <a href="http://commons.apache.org/configuration//team-list.html#oheger">oheger</a>
+            </td>
+          </tr>
+          <tr>
+            <td>update</td>
+            <td>INIConfiguration uses the platform's specific line separator instead of the Windows line separator.</td>
+            <td>
+              <a href="http://commons.apache.org/configuration//team-list.html#ebourg">ebourg</a>
+            </td>
+          </tr>
+          <tr>
+            <td>fix</td>
+            <td>INIConfiguration flushes the output at the end of a save operation. Fixes
+              <a href="http://issues.apache.org/jira/browse/CONFIGURATION-267">CONFIGURATION-267</a>.</td>
+            <td>
+              <a href="http://commons.apache.org/configuration//team-list.html#ebourg">ebourg</a>
+            </td>
+          </tr>
+          <tr>
+            <td>update</td>
+            <td>For hierarchical file-based configurations the auto-save mechanism is now also triggered if a subnode configuration is changed. In such a case the new event type EVENT_SUBNODE_CHANGED will be sent to registered listeners. Fixes
+              <a href="http://issues.apache.org/jira/browse/CONFIGURATION-265">CONFIGURATION-265</a>.</td>
+            <td>
+              <a href="http://commons.apache.org/configuration//team-list.html#oheger">oheger</a>
+            </td>
+          </tr>
+          <tr>
+            <td>update</td>
+            <td>ConfigurationInterpolator now also invokes the default lookup object for variables with a prefix that could not be resolved by their associated lookup object. Fixes
+              <a href="http://issues.apache.org/jira/browse/CONFIGURATION-266">CONFIGURATION-266</a>. Thanks to Tobias Noebel .</td>
+            <td>
+              <a href="http://commons.apache.org/configuration//team-list.html#oheger">oheger</a>
+            </td>
+          </tr>
+          <tr>
+            <td>add</td>
+            <td>A SubnodeConfiguration per default does not see certain changes of its parent configuration (e.g. reloads). With a new boolean parameter of HierarchicalConfiguration's configurationAt() method a mode can be enabled, in which the subnode configuration checks for such changes and reconstructs itself if necessary. Fixes
+              <a href="http://issues.apache.org/jira/browse/CONFIGURATION-264">CONFIGURATION-264</a>.</td>
+            <td>
+              <a href="http://commons.apache.org/configuration//team-list.html#oheger">oheger</a>
+            </td>
+          </tr>
+          <tr>
+            <td>fix</td>
+            <td>byte[] properties are properly saved as data fields in the plist configurations (PropertyListConfiguration and XMLPropertyListConfiguration).</td>
+            <td>
+              <a href="http://commons.apache.org/configuration//team-list.html#ebourg">ebourg</a>
+            </td>
+          </tr>
+          <tr>
+            <td>add</td>
+            <td>DataConfiguration now supports java.net.InetAddress, javax.mail.internet.InternetAddress, and Java 5 enumeration types. Properties are converted to these types using the new generic getters.</td>
+            <td>
+              <a href="http://commons.apache.org/configuration//team-list.html#ebourg">ebourg</a>
+            </td>
+          </tr>
+          <tr>
+            <td>fix</td>
+            <td>The object getters in DataConfiguration with no default value (i.e getURL(key)) now throw a NoSuchElementException if the flag throwExceptionOnMissing is set.</td>
+            <td>
+              <a href="http://commons.apache.org/configuration//team-list.html#ebourg">ebourg</a>
+            </td>
+          </tr>
+          <tr>
+            <td>add</td>
+            <td>Generic get methods have been added to DataConfiguration (get(), getArray() and getList())</td>
+            <td>
+              <a href="http://commons.apache.org/configuration//team-list.html#ebourg">ebourg</a>
+            </td>
+          </tr>
+          <tr>
+            <td>fix</td>
+            <td>XMLConfiguration used to drop attributes when an element's value was a list. This has been fixed. Fixes
+              <a href="http://issues.apache.org/jira/browse/CONFIGURATION-263">CONFIGURATION-263</a>.</td>
+            <td>
+              <a href="http://commons.apache.org/configuration//team-list.html#oheger">oheger</a>
+            </td>
+          </tr>
+          <tr>
+            <td>add</td>
+            <td>File configurations can now be saved to FTP URLs, or any other URL protocol supporting data output. Fixes
+              <a href="http://issues.apache.org/jira/browse/CONFIGURATION-249">CONFIGURATION-249</a>.</td>
+            <td>
+              <a href="http://commons.apache.org/configuration//team-list.html#ebourg">ebourg</a>
+            </td>
+          </tr>
+          <tr>
+            <td>fix</td>
+            <td>Fixed a potential issue in DatabaseConfiguration where an error on closing a statement would prevent the connection from being closed. Fixes
+              <a href="http://issues.apache.org/jira/browse/CONFIGURATION-180">CONFIGURATION-180</a>.</td>
+            <td>
+              <a href="http://commons.apache.org/configuration//team-list.html#ebourg">ebourg</a>
+            </td>
+          </tr>
+          <tr>
+            <td>add</td>
+            <td>Date objects are now supported in ASCII plist files. Fixes
+              <a href="http://issues.apache.org/jira/browse/CONFIGURATION-261">CONFIGURATION-261</a>.</td>
+            <td>
+              <a href="http://commons.apache.org/configuration//team-list.html#ebourg">ebourg</a>
+            </td>
+          </tr>
+          <tr>
+            <td>update</td>
+            <td>XMLPropertyListConfiguration no longer requires commons-digester and commons-beanutils to work.</td>
+            <td>
+              <a href="http://commons.apache.org/configuration//team-list.html#ebourg">ebourg</a>
+            </td>
+          </tr>
+          <tr>
+            <td>update</td>
+            <td>Fixed INIConfiguration to handle the quoted values and the lines containing a value and a comment.</td>
+            <td>
+              <a href="http://commons.apache.org/configuration//team-list.html#ebourg">ebourg</a>
+            </td>
+          </tr>
+        </table>
+      </description>
+    </item>
+  </channel>
+</rss>

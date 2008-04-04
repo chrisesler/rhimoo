@@ -1,0 +1,18 @@
+#!/bin/sh
+
+CLASSPATH="./:../../libs/rhino/js.jar:../../libs/jetty/servlet-api-2.5-6.1.6.jar:../../libs/jetty/jetty-util-6.1.6.jar:../../libs/jetty/jetty-6.1.6.jar:../../libs/ext/mysql-connector-java-3.0.17-ga-bin.jar:../../libs/jetty/cometd-api-0.9.20071105.jar:../../libs/jetty/cometd-bayeux-6.1.6.jar:../../libs/jetty/bayeux-client-6.1.6.jar"
+
+echo "Building Rhimoo Classes..."
+echo "--> MysqlConnection"
+javac -classpath ${CLASSPATH} MysqlConnection.java
+echo "--> MooServer"
+javac -classpath ${CLASSPATH} MooServer.java
+echo "--> RequestHandler"
+javac -classpath ${CLASSPATH} RequestHandler.java
+echo "--> MooServlet"
+javac -classpath ${CLASSPATH} MooServlet.java
+echo "--> Shell"
+javac -Xlint:deprecation -classpath ${CLASSPATH} Shell.java
+
+echo "Creating Rhimoo Jar File..."
+jar -cvf Rhimoo.jar *.class

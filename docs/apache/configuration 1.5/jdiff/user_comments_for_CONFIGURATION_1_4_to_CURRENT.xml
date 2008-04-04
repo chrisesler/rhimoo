@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="iso-8859-1" standalone="no"?>
+<comments
+  xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+  xsi:noNamespaceSchemaLocation='comments.xsd'
+  name="CONFIGURATION_1_4_to_CURRENT"
+  jdversion="1.0.9">
+
+<!-- This file contains comments for a JDiff report. -->
+<!-- It is used only in generating the report, and does not need to ship with the final report. -->
+
+<!-- The id attribute in an identifier element identifiers the change as noted in the report. -->
+<!-- An id has the form package[.class[.[ctor|method|field].signature]], where [] indicates optional text. -->
+<!-- A comment element can have multiple identifier elements, which will -->
+<!-- will cause the same text to appear at each place in the report, but -->
+<!-- will be converted to separate comments when the comments file is used. -->
+<!-- HTML tags in the text field will appear in the report. -->
+<comment>
+  <identifier id="org.apache.commons.configuration"/>
+  <text>
+    InsertCommentsHere
+  </text>
+</comment>
+<comment>
+  <identifier id="org.apache.commons.configuration.AbstractConfiguration"/>
+  <text>
+    InsertCommentsHere
+  </text>
+</comment>
+<comment>
+  <identifier id="org.apache.commons.configuration.AbstractConfiguration.append_added(org.apache.commons.configuration.Configuration)"/>
+  <text>
+    InsertCommentsHere
+  </text>
+</comment>
+<comment>
+  <identifier id="org.apache.commons.configuration.AbstractConfiguration.containsKey_removed(java.lang.String)"/>
+  <text>
+    InsertCommentsHere
+  </text>
+</comment>
+<comment>
+  <identifier id="org.apache.commons.configuration.AbstractConfiguration.copy_added(org.apache.commons.configuration.Configuration)"/>
+  <text>
+    InsertCommentsHere
+  </text>
+</comment>
+<comment>
+  <identifier id="org.apache.commons.configuration.AbstractConfiguration.getKeys_removed()"/>
+  <text>
+    InsertCommentsHere
+  </text>
+</comment>
+<comment>
+  <identifier id="org.apache.commons.configuration.AbstractConfiguration.interpolatedConfiguration_added()"/>
+  <text>
+    InsertCommentsHere
+  </text>
+</comment>
+<comment>
+  <identifier id="org.apache.commons.configuration.AbstractConfiguration.isEmpty_removed()"/>
+  <text>
+    InsertCommentsHere
+  </text>
+</comment>
+<comment>
+  <identifier id="org.apache.commons.configuration.AbstractHierarchicalFileConfiguration"/>
+  <text>
+    InsertCommentsHere
+  </text>
+</comment>
+<comment>
+  <identifier id="org.apache.commons.configuration.AbstractHierarchicalFileConfiguration.addNodes_changed(java.lang.String, java.util.Collection)"/>
+  <text>
+    InsertCommentsHere
+  </text>
+</comment>
+<comment>
+  <identifier id="org.apache.commons.configuration.AbstractHierarchicalFileConfiguration.subnodeConfigurationChanged_added(org.apache.commons.configuration.event.ConfigurationEvent)"/>
+  <text>
+    InsertCommentsHere
+  </text>
+</comment>
+<comment>
+  <identifier id="org.apache.commons.configuration.CombinedConfiguration"/>
+  <text>
+    InsertCommentsHere
+  </text>
+</comment>
+<comment>
+  <identifier id="org.apache.commons.configuration.CombinedConfiguration.getSource_added(java.lang.String)"/>
+  <text>
+    InsertCommentsHere
+  </text>
+</comment>
+<comment>
+  <identifier id="org.apache.commons.configuration.CompositeConfiguration"/>
+  <text>
+    InsertCommentsHere
+  </text>
+</comment>
+<comment>
+  <identifier id="org.apache.commons.configuration.CompositeConfiguration.getSource_added(java.lang.String)"/>
+  <text>
+    InsertCommentsHere
+  </text>
+</comment>
+<comment>
+  <identifier id="org.apache.commons.configuration.DataConfiguration"/>
+  <text>
+    InsertCommentsHere
+  </text>
+</comment>
+<comment>
+  <identifier id="org.apache.commons.configuration.DataConfiguration.getArray_added(java.lang.Class, java.lang.String)"/>
+  <text>
+    InsertCommentsHere
+  </text>
+</comment>
+<comment>
+  <identifier id="org.apache.commons.configuration.DataConfiguration.getArray_added(java.lang.Class, java.lang.String, java.lang.Object)"/>
+  <text>
+    InsertCommentsHere
+  </text>
+</comment>
+<comment>
+  <identifier id="org.apache.commons.configuration.DataConfiguration.getList_added(java.lang.Class, java.lang.String)"/>
+  <text>
+    InsertCommentsHere
+  </text>
+</comment>
+<comment>
+  <identifier id="org.apache.commons.configuration.DataConfiguration.getList_added(java.lang.Class, java.lang.String, java.util.List)"/>
+  <text>
+    InsertCommentsHere
+  </text>
+</comment>
+<comment>
+  <identifier id="org.apache.commons.configuration.DataConfiguration.get_added(java.lang.Class, java.lang.String)"/>
+  <text>
+    InsertCommentsHere
+  </text>
+</comment>
+<comment>
+  <identifier id="org.apache.commons.configuration.DataConfiguration.get_added(java.lang.Class, java.lang.String, java.lang.Object)"/>
+  <text>
+    InsertCommentsHere
+  </text>
+</comment>
+<comment>
+  <identifier id="org.apache.commons.configuration.DatabaseConfiguration"/>
+  <text>
+    InsertCommentsHere
+  </text>
+</comment>
+<comment>
+  <identifier id="org.apache.commons.configuration.DatabaseConfiguration.getConnection_changed()"/>
+  <text>
+    InsertCommentsHere
+  </text>
+</comment>
+<comment>
+  <identifier id="org.apache.commons.configuration.DefaultConfigurationBuilder"/>
+  <text>
+    InsertCommentsHere
+  </text>
+</comment>
+<comment>
+  <identifier id="org.apache.commons.configuration.DefaultConfigurationBuilder.EVENT_ERR_LOAD_OPTIONAL"/>
+  <text>
+    InsertCommentsHere
+  </text>
+</comment>
+<comment>
+  <identifier id="org.apache.commons.configuration.DefaultConfigurationBuilder.fireError_changed(int, java.lang.String, java.lang.Object, java.lang.Throwable)"/>
+  <text>
+    InsertCommentsHere
+  </text>
+</comment>
+<comment>
+  <identifier id="org.apache.commons.configuration.EnvironmentConfiguration"/>
+  <text>
+    InsertCommentsHere
+  </text>
+</comment>
+<comment>
+  <identifier id="org.apache.commons.configuration.HierarchicalConfiguration"/>
+  <text>
+    InsertCommentsHere
+  </text>
+</comment>
+<comment>
+  <identifier id="org.apache.commons.configuration.HierarchicalConfiguration.EVENT_SUBNODE_CHANGED"/>
+  <text>
+    InsertCommentsHere
+  </text>
+</comment>
+<comment>
+  <identifier id="org.apache.commons.configuration.HierarchicalConfiguration.configurationAt_added(java.lang.String, boolean)"/>
+  <text>
+    InsertCommentsHere
+  </text>
+</comment>
+<comment>
+  <identifier id="org.apache.commons.configuration.HierarchicalConfiguration.createSubnodeConfiguration_added(org.apache.commons.configuration.tree.ConfigurationNode, java.lang.String)"/>
+  <text>
+    InsertCommentsHere
+  </text>
+</comment>
+<comment>
+  <identifier id="org.apache.commons.configuration.HierarchicalConfiguration.interpolatedConfiguration_added()"/>
+  <text>
+    InsertCommentsHere
+  </text>
+</comment>
+<comment>
+  <identifier id="org.apache.commons.configuration.HierarchicalConfiguration.subnodeConfigurationChanged_added(org.apache.commons.configuration.event.ConfigurationEvent)"/>
+  <text>
+    InsertCommentsHere
+  </text>
+</comment>
+<comment>
+  <identifier id="org.apache.commons.configuration.SubnodeConfiguration"/>
+  <text>
+    InsertCommentsHere
+  </text>
+</comment>
+<comment>
+  <identifier id="org.apache.commons.configuration.SubnodeConfiguration.createSubnodeConfiguration_added(org.apache.commons.configuration.tree.ConfigurationNode, java.lang.String)"/>
+  <text>
+    InsertCommentsHere
+  </text>
+</comment>
+<comment>
+  <identifier id="org.apache.commons.configuration.SubnodeConfiguration.getRootNode_changed()"/>
+  <text>
+    InsertCommentsHere
+  </text>
+</comment>
+<comment>
+  <identifier id="org.apache.commons.configuration.SubnodeConfiguration.getSubnodeKey_added()"/>
+  <text>
+    InsertCommentsHere
+  </text>
+</comment>
+<comment>
+  <identifier id="org.apache.commons.configuration.SubnodeConfiguration.setSubnodeKey_added(java.lang.String)"/>
+  <text>
+    InsertCommentsHere
+  </text>
+</comment>
+<comment>
+  <identifier id="org.apache.commons.configuration.XMLConfiguration"/>
+  <text>
+    InsertCommentsHere
+  </text>
+</comment>
+<comment>
+  <identifier id="org.apache.commons.configuration.XMLConfiguration.addNodes_changed(java.lang.String, java.util.Collection)"/>
+  <text>
+    InsertCommentsHere
+  </text>
+</comment>
+<comment>
+  <identifier id="org.apache.commons.configuration.XMLConfiguration.registerEntityId_added(java.lang.String, java.net.URL)"/>
+  <text>
+    InsertCommentsHere
+  </text>
+</comment>
+<comment>
+  <identifier id="org.apache.commons.configuration.XMLConfiguration.resolveEntity_added(java.lang.String, java.lang.String)"/>
+  <text>
+    InsertCommentsHere
+  </text>
+</comment>
+<comment>
+  <identifier id="org.apache.commons.configuration.plist"/>
+  <text>
+    InsertCommentsHere
+  </text>
+</comment>
+<comment>
+  <identifier id="org.apache.commons.configuration.plist.PropertyListConfiguration"/>
+  <text>
+    InsertCommentsHere
+  </text>
+</comment>
+<comment>
+  <identifier id="org.apache.commons.configuration.plist.PropertyListConfiguration.addProperty_changed(java.lang.String, java.lang.Object)"/>
+  <text>
+    InsertCommentsHere
+  </text>
+</comment>
+<comment>
+  <identifier id="org.apache.commons.configuration.plist.PropertyListConfiguration.setProperty_changed(java.lang.String, java.lang.Object)"/>
+  <text>
+    InsertCommentsHere
+  </text>
+</comment>
+<comment>
+  <identifier id="org.apache.commons.configuration.plist.XMLPropertyListConfiguration"/>
+  <text>
+    InsertCommentsHere
+  </text>
+</comment>
+<comment>
+  <identifier id="org.apache.commons.configuration.plist.XMLPropertyListConfiguration.addProperty_changed(java.lang.String, java.lang.Object)"/>
+  <text>
+    InsertCommentsHere
+  </text>
+</comment>
+<comment>
+  <identifier id="org.apache.commons.configuration.plist.XMLPropertyListConfiguration.setProperty_changed(java.lang.String, java.lang.Object)"/>
+  <text>
+    InsertCommentsHere
+  </text>
+</comment>
+
+</comments>

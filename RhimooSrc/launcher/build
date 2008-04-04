@@ -1,0 +1,14 @@
+#!/bin/sh
+
+CLASSPATH="./:../../libs/rhino/js.jar:../../libs/jetty/servlet-api-2.5-6.1.6.jar:../../libs/jetty/jetty-util-6.1.6.jar:../../libs/jetty/jetty-6.1.6.jar:../../libs/ext/mysql-connector-java-3.0.17-ga-bin.jar:../../libs/jetty/cometd-api-0.9.20071105.jar:../../libs/jetty/cometd-bayeux-6.1.6.jar:../../libs/jetty/bayeux-client-6.1.6.jar"
+
+echo "Building Rhimoo Launcher Class..."
+
+echo "--> Launcher"
+javac -Xlint:deprecation -Xlint:unchecked -classpath ${CLASSPATH} Launcher.java
+
+
+echo "Creating Rhimoo Launcher Jar File..."
+jar -cvfm Launcher.jar META-INF/MANIFEST.MF Launcher.class
+
+

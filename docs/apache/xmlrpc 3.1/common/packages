@@ -1,0 +1,6 @@
+org.apache.xmlrpc.common
+org.apache.xmlrpc.jaxb
+org.apache.xmlrpc.parser
+org.apache.xmlrpc.serializer
+org.apache.xmlrpc.util
+org.apache.xmlrpc

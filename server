@@ -1,0 +1,33 @@
+#!/bin/sh
+
+CLASSPATH="./libs/rhimoo"
+
+#java -classpath ${CLASSPATH} EmbeddedServerSideApp
+#java -classpath ${CLASSPATH} org.mozilla.javascript.tools.shell.Main bootstrap.js
+#java -classpath ${CLASSPATH} org.mozilla.javascript.tools.shell.Main test.js
+
+# uncomment to set JAVA_HOME variable
+#JAVA_HOME=/opt/lampp/jdk1.5.0_10
+
+if [ "$JAVA_HOME" ]; then
+   JAVACMD="$JAVA_HOME/bin/java"
+else
+   JAVACMD=java
+fi
+
+# If JAVA_HOME is set, check if java command is executable
+if [ $JAVA_HOME -a ! -x $JAVACMD ] ; then
+   echo "Warning: JAVA_HOME variable may be set incorrectly:"
+   echo "         No executable found at $JAVACMD"
+fi
+
+echo "Starting MooServer"
+
+INSTALL_DIR="${0%/*}"
+cd $INSTALL_DIR
+INSTALL_DIR=$PWD
+
+# Invoke the Java VM
+#$JAVACMD -classpath ${CLASSPATH} org.mozilla.javascript.tools.shell.Main rhimoo/server.js
+
+$JAVACMD -jar "$INSTALL_DIR/libs/rhimoo/Launcher.jar"

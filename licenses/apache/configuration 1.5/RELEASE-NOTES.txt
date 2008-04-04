@@ -1,0 +1,214 @@
+$Id: RELEASE-NOTES.txt 593311 2007-11-08 21:06:42Z oheger $
+
+                           Commons Configuration Package
+                               Version 1.5
+                               Release Notes
+
+
+INTRODUCTION
+============
+
+This document contains the release notes for this version of the Commons
+Configuration component, and highlights changes since the previous version.
+Commons Configuration provides a generic configuration interface which enables
+an application to read configuration data from a variety of sources.
+
+The 1.5 release contains numerous bug fixes. Most of the addressed bugs are
+not really critical. Some of them have been living in the code base for quite a
+while. In some cases (e.g. handling of list properties) the behavior of the
+involved methods has been made more consistent. There are also a few new
+features, e.g. a new Configuration class for accessing environment variables
+or support for registering DTD files when parsing XML files.
+
+Commons Configuration 1.5 is fully binary compatible to the previous version.
+Apart from the bug fixes existing code should not be impacted when switching
+from 1.4 to 1.5.
+
+A complete list of changes can be found below.
+
+BUG FIXES IN 1.5
+================
+* [CONFIGURATION-299]
+  Resolving of variables with the prefix const (constant fields) caused a
+  ClassCastException under certain circumstances if non-String fields were
+  involved. This has been fixed.
+
+* [CONFIGURATION-296]
+  A bug in XMLConfiguration caused that attributes of the root element could
+  not be changed. This has been fixed.
+
+* [CONFIGURATION-295]
+  The subset() method of HierarchicalConfiguration now takes the value of the
+  subset's root node into account if it is not ambigous.
+
+* [CONFIGURATION-294]
+  Nodes added to a XMLConfiguration using the addNodes() method could lose
+  their value when the configuration was saved. This is now fixed.
+
+* [CONFIGURATION-291]
+  The addNodes() method of hierarchical file-based configurations now correctly
+  triggers an auto save.
+
+* [CONFIGURATION-287]
+  HierarchicalConfiguration.addNodes() now resets the reference property of all
+  nodes to be added. This fixes a problem with XMLConfiguration, which now
+  detects the added nodes as new and treats them correctly when the
+  configuration is saved.
+
+* [CONFIGURATION-283]
+  ConfigurationUtils.convertToHierarchical() now correctly deals with property
+  values containing escaped list delimiters. This also affects
+  CombinedConfiguration when sub configurations with such property values are
+  contained.
+
+* [CONFIGURATION-282]
+  The default expression engine used by HierarchicalConfiguration instances is
+  now lazily initialized. This avoids NullPointerExceptions in certain server
+  environments after a redeploy.
+
+* [CONFIGURATION-281]
+  Cycles in the JNDI tree no longer cause a stack overflow in
+  JNDIConfiguration.
+
+* [CONFIGURATION-280]
+  Using file-based configurations in auto-save mode together with a reloading
+  strategy could cause data loss. This has been fixed.
+
+* [CONFIGURATION-279]
+  A PropertiesConfiguration that was created from a non existing file lost its
+  content when it was saved. This problem has been solved.
+
+* [CONFIGURATION-275]
+  AbstractConfiguration.addProperty() now correctly deals with list and array
+  properties if delimiter parsing is disabled.
+
+* [CONFIGURATION-274]
+  PropertiesConfiguration now supports escaping the escape character for list
+  delimiters.
+
+* [CONFIGURATION-272]
+  New copy() and append() methods have been added to AbstractConfiguration.
+  They replace the methods with the same names in ConfigurationUtils, which do
+  not handle all features of AbstractConfiguration properly (e.g. list
+  delimiters in property values are incorrectly treated). To avoid such
+  problems, the new methods should be used.
+
+* [CONFIGURATION-270]
+  List properties and properties containing interpolated variables are now
+  properly saved by INIConfiguration.
+
+* [CONFIGURATION-269]
+  PropertiesConfiguration no longer escapes the list delimiter on saving if the
+  list delimiter has been disabled.
+
+* [CONFIGURATION-268]
+  When delimiter parsing was disabled for XMLConfiguration, saving and loading
+  the configuration accidently added escape characters to properties containing
+  the list delimiter character. This has been fixed. It is now also possible to
+  escape the escape character itself.
+
+* [CONFIGURATION-267]
+  INIConfiguration flushes the output at the end of a save operation.
+
+* [CONFIGURATION-263]
+  XMLConfiguration used to drop attributes when an element's value was a list.
+  This has been fixed.
+
+* [CONFIGURATION-253]
+  The return value of FileConfiguration.getFile() is now always consistent with
+  the result of getURL().
+
+* [CONFIGURATION-180]
+  Fixed a potential issue in DatabaseConfiguration where an error on closing a
+  statement would prevent the connection from being closed.
+
+* byte[] properties are properly saved as data fields in the plist
+  configurations (PropertyListConfiguration and XMLPropertyListConfiguration).
+
+IMPROVEMENTS IN 1.5
+===================
+* [CONFIGURATION-290]
+  A new method registerEntityId() was added to XMLConfiguration, which allows
+  to register URLs for entities. A new default implementation of the
+  EntityResolver interface handles these entities automatically.
+
+* [CONFIGURATION-284]
+  There is a new configuration implementation EnvironmentConfiguration,
+  which provides access to (OS) environment variables. On Java >= 1.5 this
+  class can be directly used; on earlier versions a dependency to ant is
+  required.
+
+* [CONFIGURATION-285]
+  DefaultConfigurationBuilder will now notify registered error listeners about
+  optional configuration sources that could not be created. Before exceptions
+  thrown by optional configurations were swallowed.
+
+* [CONFIGURATION-277]
+  The base implementation of clear() in AbstractConfiguration now checks for a
+  potential UnsupportedOperationException when iterating over the existing
+  properties.
+
+* [CONFIGURATION-273]
+  A new method interpolatedConfiguration() was added to AbstractConfiguration.
+  This method returns a configuration with the same type and content as the
+  original configuration, however all variables have been resolved.
+
+* [CONFIGURATION-265]
+  For hierarchical file-based configurations the auto-save mechanism is now
+  also triggered if a subnode configuration is changed. In such a case the new
+  event type EVENT_SUBNODE_CHANGED will be sent to registered listeners.
+
+* [CONFIGURATION-264]
+  A SubnodeConfiguration per default does not see certain changes of its parent
+  configuration (e.g. reloads). With a new boolean parameter of
+  HierarchicalConfiguration's configurationAt() method a mode can be enabled,
+  in which the subnode configuration checks for such changes and reconstructs
+  itself if necessary.
+
+* [CONFIGURATION-261]
+  Date objects are now supported in ASCII plist files.
+
+* [CONFIGURATION-249]
+  File configurations can now be saved to FTP URLs, or any other URL protocol
+  supporting data output.
+
+* [CONFIGURATION-215]
+  A new getSource() method was added to CompositeConfiguration and
+  CombinedConfiguration, which returns the child configuration, in which a
+  given property is defined.
+
+* DataConfiguration now supports java.net.InetAddress,
+  javax.mail.internet.InternetAddress, and Java 5 enumeration types. Properties
+  are converted to these types using the new generic getters.
+
+* Generic get methods have been added to DataConfiguration (get(), getArray()
+  and getList())
+
+OTHER CHANGES
+=============
+* [CONFIGURATION-266]
+  ConfigurationInterpolator now also invokes the default lookup object for
+  variables with a prefix that could not be resolved by their associated lookup
+  object.
+
+* INIConfiguration uses the platform's specific line separator instead of the
+  Windows line separator.
+
+* Fixed INIConfiguration to handle the quoted values and the lines containing a
+  value and a comment.
+
+* The object getters in DataConfiguration with no default value (i.e
+  getURL(key)) now throw a NoSuchElementException if the flag
+  throwExceptionOnMissing is set.
+
+* XMLPropertyListConfiguration no longer requires commons-digester and
+  commons-beanutils to work.
+
+* The dependencies to commons-codec and commons-jxpath have been marked as
+  optional. They are not required by the core classes.
+
+* The dependency to commons-logging was updated to the current version
+  1.1. Older versions of commons-logging will still work.
+
+* Some of the dependencies in the m2 pom have been updated to be more
+  consistent.

@@ -1,0 +1,402 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html><head><title>Commons Configuration - Changelog Report</title><style type="text/css" media="all">
+          @import url("./style/maven-base.css");
+          
+			    @import url("./style/maven-theme.css");@import url("./style/project.css");</style><link rel="stylesheet" href="./style/print.css" type="text/css" media="print"></link><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1"></meta></head><body class="composite"><div id="banner"><a href="http://commons.apache.org/" id="organizationLogo"><img alt="The Apache Software Foundation" src="http://commons.apache.org/images/logo.png"></img></a><a href="http://commons.apache.org/configuration/" id="projectLogo"><img alt="Commons Configuration" src="./images/logo.png"></img></a><div class="clear"><hr></hr></div></div><div id="breadcrumbs"><div class="xleft">
+                	Last published: 14 November 2007
+                  | Doc for 1.5</div><div class="xright">
+        
+        <a href="http://commons.apache.org/" class="externalLink" title="External Link">Apache Commons</a>
+      </div><div class="clear"><hr></hr></div></div><div id="leftColumn"><div id="navcolumn"><div id="menuConfiguration"><h5>Configuration</h5><ul><li class="none"><a href="index.html">Home</a></li><li class="none"><a href="http://commons.apache.org/downloads/download_configuration.cgi" class="externalLink" title="External Link">Download</a></li><li class="none"><a href="changes-report.html">Release History</a></li><li class="none"><a href="userguide/user_guide.html">User's Guide</a></li><li class="none"><a href="userguide-1.2/index.html">Howtos (1.2 release)</a></li><li class="none"><a href="dependencies.html">Runtime Dependencies</a></li><li class="none"><a href="apidocs/index.html">Javadoc (current release)</a></li><li class="none"><a href="javadocarchive.html">Javadoc (old releases)</a></li></ul></div><div id="menuDevelopment"><h5>Development</h5><ul><li class="none"><a href="building.html">Building</a></li><li class="none"><a href="tasks-report.html">Roadmap</a></li><li class="none"><a href="issue-tracking.html">Issue Tracking</a></li><li class="none"><a href="http://svn.apache.org/repos/asf/commons/proper/configuration/" class="externalLink" title="External Link">SVN</a></li></ul></div><div id="menuProject_Documentation"><h5>Project Documentation</h5><ul><li class="none"><a href="index.html">About Commons Configuration</a></li><li class="none"><a href="downloads.html">Downloads</a></li><li class="collapsed"><a href="project-info.html">Project Info</a></li><li class="expanded"><a href="maven-reports.html">Project Reports</a><ul><li class="none"><a href="jdepend-report.html">Metrics</a></li><li class="none"><a href="checkstyle/index.html">Checkstyle</a></li><li class="none"><a href="changes-report.html">Changes</a></li><li class="none"><strong><a href="changelog-report.html">Change Log</a></strong></li><li class="none"><a href="file-activity-report.html">File Activity</a></li><li class="none"><a href="developer-activity-report.html">Developer Activity</a></li><li class="none"><a href="apidocs/index.html" class="newWindow" title="New Window" target="_blank">JavaDocs</a></li><li class="none"><a href="javadoc.html">JavaDoc Report</a></li><li class="none"><a href="javadoc-warnings-report.html">JavaDoc Warnings Report</a></li><li class="none"><a href="xref/index.html" class="newWindow" title="New Window" target="_blank">Source Xref</a></li><li class="none"><a href="xref-test/index.html" class="newWindow" title="New Window" target="_blank">Test Xref</a></li><li class="none"><a href="junit-report.html">Unit Tests</a></li><li class="none"><a href="task-list.html">Task List</a></li><li class="none"><a href="pmd-report.html">PMD Report</a></li><li class="none"><a href="cobertura/index.html" class="newWindow" title="New Window" target="_blank">Cobertura</a></li><li class="none"><a href="tasks-report.html">Tasks</a></li><li class="none"><a href="findbugs-report.html">FindBugs Report</a></li><li class="none"><a href="jdiff/changes.html" class="newWindow" title="New Window" target="_blank">JDiff</a></li></ul></li><li class="none"><a href="http://commons.apache.org/charter.html" class="externalLink" title="External Link">Development Process</a></li></ul></div><div id="menuCommons"><h5>Commons</h5><ul><li class="none"><a href="http://commons.apache.org/" class="externalLink" title="External Link">Home</a></li><li class="collapsed"><a href="http://commons.apache.org/components.html" class="externalLink" title="External Link">Components</a></li><li class="collapsed"><a href="http://commons.apache.org/sandbox/index.html" class="externalLink" title="External Link">Sandbox</a></li><li class="collapsed"><a href="http://commons.apache.org/dormant/index.html" class="externalLink" title="External Link">Dormant</a></li><li class="none"><a href="http://commons.apache.org/volunteering.html" class="externalLink" title="External Link">Volunteering</a></li><li class="none"><a href="http://commons.apache.org/patches.html" class="externalLink" title="External Link">Contributing Patches</a></li><li class="none"><a href="http://commons.apache.org/building.html" class="externalLink" title="External Link">Building Components</a></li><li class="none"><a href="http://commons.apache.org/releases/index.html" class="externalLink" title="External Link">Releasing Components</a></li><li class="none"><a href="http://wiki.apache.org/commons/FrontPage" class="externalLink" title="External Link">Wiki</a></li></ul></div><a href="http://maven.apache.org/" title="Built by Maven" id="poweredBy"><img alt="Built by Maven" src="./images/logos/maven-feather.png"></img></a></div></div><div id="bodyColumn"><div class="contentBox"><div class="section"><a name="Changelog_Report"></a><h2>Changelog Report</h2><p>Timeframe: 30 days, Total Commits: 34 Total Number of Files Changed: 89</p><table class="bodyTable"><thead>
+          <tr class="a"><th>Date</th><th>Author</th><th>File/Message</th></tr>
+        </thead><tbody>
+          <tr class="b"><td>2007-11-14 21:44:43</td><td>Oliver Heger</td><td>
+              <p>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/src/java/org/apache/commons/configuration/DefaultConfigurationBuilder.java" class="externalLink" title="External Link">/commons/proper/configuration/trunk/src/java/org/apache/commons/configuration/DefaultConfigurationBuilder.java</a>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/src/java/org/apache/commons/configuration/DefaultConfigurationBuilder.java?rev=595043&amp;content-type=text/vnd.viewcvs-markup" class="externalLink" title="External Link">v 595043</a>
+              </p>Applied a workaround for fixing a mysterious MethodNotFound error in the test cases when run under a JDK 1.3</td></tr>
+          <tr class="a"><td>2007-11-14 21:31:06</td><td>Oliver Heger</td><td>
+              <p>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/project.xml" class="externalLink" title="External Link">/commons/proper/configuration/trunk/project.xml</a>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/project.xml?rev=595034&amp;content-type=text/vnd.viewcvs-markup" class="externalLink" title="External Link">v 595034</a>
+              </p>
+              <p>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/src/java/org/apache/commons/configuration/DefaultConfigurationBuilder.java" class="externalLink" title="External Link">/commons/proper/configuration/trunk/src/java/org/apache/commons/configuration/DefaultConfigurationBuilder.java</a>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/src/java/org/apache/commons/configuration/DefaultConfigurationBuilder.java?rev=595034&amp;content-type=text/vnd.viewcvs-markup" class="externalLink" title="External Link">v 595034</a>
+              </p>Changed version of maven-findbugs-plugin to a modern version</td></tr>
+          <tr class="b"><td>2007-11-10 16:40:31</td><td>Oliver Heger</td><td>
+              <p>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/default.properties" class="externalLink" title="External Link">/commons/proper/configuration/trunk/default.properties</a>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/default.properties?rev=593788&amp;content-type=text/vnd.viewcvs-markup" class="externalLink" title="External Link">v 593788</a>
+              </p>
+              <p>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/pom.xml" class="externalLink" title="External Link">/commons/proper/configuration/trunk/pom.xml</a>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/pom.xml?rev=593788&amp;content-type=text/vnd.viewcvs-markup" class="externalLink" title="External Link">v 593788</a>
+              </p>
+              <p>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/project.xml" class="externalLink" title="External Link">/commons/proper/configuration/trunk/project.xml</a>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/project.xml?rev=593788&amp;content-type=text/vnd.viewcvs-markup" class="externalLink" title="External Link">v 593788</a>
+              </p>Rolled back version number to snapshot</td></tr>
+          <tr class="a"><td>2007-11-10 16:35:16</td><td>Oliver Heger</td><td>
+              <p>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/default.properties" class="externalLink" title="External Link">/commons/proper/configuration/trunk/default.properties</a>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/default.properties?rev=593785&amp;content-type=text/vnd.viewcvs-markup" class="externalLink" title="External Link">v 593785</a>
+              </p>
+              <p>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/pom.xml" class="externalLink" title="External Link">/commons/proper/configuration/trunk/pom.xml</a>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/pom.xml?rev=593785&amp;content-type=text/vnd.viewcvs-markup" class="externalLink" title="External Link">v 593785</a>
+              </p>
+              <p>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/project.xml" class="externalLink" title="External Link">/commons/proper/configuration/trunk/project.xml</a>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/project.xml?rev=593785&amp;content-type=text/vnd.viewcvs-markup" class="externalLink" title="External Link">v 593785</a>
+              </p>Updated version number for release candidate 2</td></tr>
+          <tr class="b"><td>2007-11-08 23:32:46</td><td>Jörg Schaible</td><td>
+              <p>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/build.xml" class="externalLink" title="External Link">/commons/proper/configuration/trunk/build.xml</a>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/build.xml?rev=593341&amp;content-type=text/vnd.viewcvs-markup" class="externalLink" title="External Link">v 593341</a>
+              </p>Use same Xerces artifact in Ant script as in Maven 1/2.</td></tr>
+          <tr class="a"><td>2007-11-08 22:14:21</td><td>Oliver Heger</td><td>
+              <p>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/src/java/org/apache/commons/configuration/HierarchicalConfiguration.java" class="externalLink" title="External Link">/commons/proper/configuration/trunk/src/java/org/apache/commons/configuration/HierarchicalConfiguration.java</a>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/src/java/org/apache/commons/configuration/HierarchicalConfiguration.java?rev=593319&amp;content-type=text/vnd.viewcvs-markup" class="externalLink" title="External Link">v 593319</a>
+              </p>Fix for a findbugs warning in HierarchicalConfiguration: the non serializable field expressionEngine was made transient. This should not be a problem because serialization of Configuration objects never worked. This is something that needs to be addressed in the next major release.</td></tr>
+          <tr class="b"><td>2007-11-08 22:11:49</td><td>Oliver Heger</td><td>
+              <p>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/conf/findbugs-exclude-filter.xml" class="externalLink" title="External Link">/commons/proper/configuration/trunk/conf/findbugs-exclude-filter.xml</a>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/conf/findbugs-exclude-filter.xml?rev=593315&amp;content-type=text/vnd.viewcvs-markup" class="externalLink" title="External Link">v 593315</a>
+              </p>
+              <p>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/project.properties" class="externalLink" title="External Link">/commons/proper/configuration/trunk/project.properties</a>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/project.properties?rev=593315&amp;content-type=text/vnd.viewcvs-markup" class="externalLink" title="External Link">v 593315</a>
+              </p>Added an exclusion filter for findbugs</td></tr>
+          <tr class="a"><td>2007-11-08 22:10:09</td><td>Oliver Heger</td><td>
+              <p>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/xdocs/dependencies.xml" class="externalLink" title="External Link">/commons/proper/configuration/trunk/xdocs/dependencies.xml</a>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/xdocs/dependencies.xml?rev=593314&amp;content-type=text/vnd.viewcvs-markup" class="externalLink" title="External Link">v 593314</a>
+              </p>Updated version of commons-logging dependency</td></tr>
+          <tr class="b"><td>2007-11-08 22:08:38</td><td>Oliver Heger</td><td>
+              <p>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/project.xml" class="externalLink" title="External Link">/commons/proper/configuration/trunk/project.xml</a>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/project.xml?rev=593312&amp;content-type=text/vnd.viewcvs-markup" class="externalLink" title="External Link">v 593312</a>
+              </p>Added information about the 1.5 release to the downloads page</td></tr>
+          <tr class="a"><td>2007-11-08 22:06:42</td><td>Oliver Heger</td><td>
+              <p>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/RELEASE-NOTES.txt" class="externalLink" title="External Link">/commons/proper/configuration/trunk/RELEASE-NOTES.txt</a>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/RELEASE-NOTES.txt?rev=593311&amp;content-type=text/vnd.viewcvs-markup" class="externalLink" title="External Link">v 593311</a>
+              </p>
+              <p>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/xdocs/changes.xml" class="externalLink" title="External Link">/commons/proper/configuration/trunk/xdocs/changes.xml</a>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/xdocs/changes.xml?rev=593311&amp;content-type=text/vnd.viewcvs-markup" class="externalLink" title="External Link">v 593311</a>
+              </p>Updated release notes to reflect latest modifications at the dependencies</td></tr>
+          <tr class="b"><td>2007-11-08 16:56:43</td><td>niallp</td><td>
+              <p>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/project.properties" class="externalLink" title="External Link">/commons/proper/configuration/trunk/project.properties</a>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/project.properties?rev=593214&amp;content-type=text/vnd.viewcvs-markup" class="externalLink" title="External Link">v 593214</a>
+              </p>Specify JDK 1.3 source/target to m1 build</td></tr>
+          <tr class="a"><td>2007-11-08 16:31:10</td><td>niallp</td><td>
+              <p>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/pom.xml" class="externalLink" title="External Link">/commons/proper/configuration/trunk/pom.xml</a>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/pom.xml?rev=593199&amp;content-type=text/vnd.viewcvs-markup" class="externalLink" title="External Link">v 593199</a>
+              </p>
+              <p>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/src/assembly" class="externalLink" title="External Link">/commons/proper/configuration/trunk/src/assembly</a>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/src/assembly?rev=593199&amp;content-type=text/vnd.viewcvs-markup" class="externalLink" title="External Link">v 593199</a>
+              </p>
+              <p>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/src/assembly/bin.xml" class="externalLink" title="External Link">/commons/proper/configuration/trunk/src/assembly/bin.xml</a>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/src/assembly/bin.xml?rev=593199&amp;content-type=text/vnd.viewcvs-markup" class="externalLink" title="External Link">v 593199</a>
+              </p>
+              <p>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/src/assembly/src.xml" class="externalLink" title="External Link">/commons/proper/configuration/trunk/src/assembly/src.xml</a>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/src/assembly/src.xml?rev=593199&amp;content-type=text/vnd.viewcvs-markup" class="externalLink" title="External Link">v 593199</a>
+              </p>
+              <p>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/src/site" class="externalLink" title="External Link">/commons/proper/configuration/trunk/src/site</a>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/src/site?rev=593199&amp;content-type=text/vnd.viewcvs-markup" class="externalLink" title="External Link">v 593199</a>
+              </p>
+              <p>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/src/site/resources" class="externalLink" title="External Link">/commons/proper/configuration/trunk/src/site/resources</a>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/src/site/resources?rev=593199&amp;content-type=text/vnd.viewcvs-markup" class="externalLink" title="External Link">v 593199</a>
+              </p>
+              <p>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/src/site/resources/images (von /commons/proper/configuration/trunk/xdocs/images:587899)" class="externalLink" title="External Link">/commons/proper/configuration/trunk/src/site/resources/images (von /commons/proper/configuration/trunk/xdocs/images:587899)</a>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/src/site/resources/images (von /commons/proper/configuration/trunk/xdocs/images:587899)?rev=593199&amp;content-type=text/vnd.viewcvs-markup" class="externalLink" title="External Link">v 593199</a>
+              </p>
+              <p>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/src/site/resources/images/logo.png (von /commons/proper/configuration/trunk/xdocs/images/logo.png:593195)" class="externalLink" title="External Link">/commons/proper/configuration/trunk/src/site/resources/images/logo.png (von /commons/proper/configuration/trunk/xdocs/images/logo.png:593195)</a>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/src/site/resources/images/logo.png (von /commons/proper/configuration/trunk/xdocs/images/logo.png:593195)?rev=593199&amp;content-type=text/vnd.viewcvs-markup" class="externalLink" title="External Link">v 593199</a>
+              </p>
+              <p>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/src/site/site.xml" class="externalLink" title="External Link">/commons/proper/configuration/trunk/src/site/site.xml</a>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/src/site/site.xml?rev=593199&amp;content-type=text/vnd.viewcvs-markup" class="externalLink" title="External Link">v 593199</a>
+              </p>Add m2 assembly and site descriptors</td></tr>
+          <tr class="b"><td>2007-11-07 22:53:17</td><td>Oliver Heger</td><td>
+              <p>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/build.xml" class="externalLink" title="External Link">/commons/proper/configuration/trunk/build.xml</a>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/build.xml?rev=592918&amp;content-type=text/vnd.viewcvs-markup" class="externalLink" title="External Link">v 592918</a>
+              </p>Updated ant build to new dependencies; fixed title of Javadocs</td></tr>
+          <tr class="a"><td>2007-11-07 21:40:32</td><td>Jörg Schaible</td><td>
+              <p>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/pom.xml" class="externalLink" title="External Link">/commons/proper/configuration/trunk/pom.xml</a>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/pom.xml?rev=592884&amp;content-type=text/vnd.viewcvs-markup" class="externalLink" title="External Link">v 592884</a>
+              </p>
+              <p>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/project.xml" class="externalLink" title="External Link">/commons/proper/configuration/trunk/project.xml</a>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/project.xml?rev=592884&amp;content-type=text/vnd.viewcvs-markup" class="externalLink" title="External Link">v 592884</a>
+              </p>Optimize, update and armonize dependencies for M2 + M1.</td></tr>
+          <tr class="b"><td>2007-11-04 11:21:55</td><td>Oliver Heger</td><td>
+              <p>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/xdocs/userguide-1.2/index.xml" class="externalLink" title="External Link">/commons/proper/configuration/trunk/xdocs/userguide-1.2/index.xml</a>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/xdocs/userguide-1.2/index.xml?rev=591752&amp;content-type=text/vnd.viewcvs-markup" class="externalLink" title="External Link">v 591752</a>
+              </p>Fixed broken link in old howtos section</td></tr>
+          <tr class="a"><td>2007-11-04 11:19:23</td><td>Oliver Heger</td><td>
+              <p>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/xdocs/navigation.xml" class="externalLink" title="External Link">/commons/proper/configuration/trunk/xdocs/navigation.xml</a>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/xdocs/navigation.xml?rev=591751&amp;content-type=text/vnd.viewcvs-markup" class="externalLink" title="External Link">v 591751</a>
+              </p>Removed obsolete Avalon link</td></tr>
+          <tr class="b"><td>2007-11-01 16:10:48</td><td>Oliver Heger</td><td>
+              <p>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/default.properties" class="externalLink" title="External Link">/commons/proper/configuration/trunk/default.properties</a>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/default.properties?rev=591043&amp;content-type=text/vnd.viewcvs-markup" class="externalLink" title="External Link">v 591043</a>
+              </p>
+              <p>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/pom.xml" class="externalLink" title="External Link">/commons/proper/configuration/trunk/pom.xml</a>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/pom.xml?rev=591043&amp;content-type=text/vnd.viewcvs-markup" class="externalLink" title="External Link">v 591043</a>
+              </p>
+              <p>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/project.xml" class="externalLink" title="External Link">/commons/proper/configuration/trunk/project.xml</a>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/project.xml?rev=591043&amp;content-type=text/vnd.viewcvs-markup" class="externalLink" title="External Link">v 591043</a>
+              </p>Rolled back version number after tagging the RC</td></tr>
+          <tr class="a"><td>2007-11-01 15:50:38</td><td>Oliver Heger</td><td>
+              <p>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/default.properties" class="externalLink" title="External Link">/commons/proper/configuration/trunk/default.properties</a>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/default.properties?rev=591028&amp;content-type=text/vnd.viewcvs-markup" class="externalLink" title="External Link">v 591028</a>
+              </p>
+              <p>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/pom.xml" class="externalLink" title="External Link">/commons/proper/configuration/trunk/pom.xml</a>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/pom.xml?rev=591028&amp;content-type=text/vnd.viewcvs-markup" class="externalLink" title="External Link">v 591028</a>
+              </p>
+              <p>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/project.xml" class="externalLink" title="External Link">/commons/proper/configuration/trunk/project.xml</a>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/project.xml?rev=591028&amp;content-type=text/vnd.viewcvs-markup" class="externalLink" title="External Link">v 591028</a>
+              </p>
+              <p>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/xdocs/changes.xml" class="externalLink" title="External Link">/commons/proper/configuration/trunk/xdocs/changes.xml</a>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/xdocs/changes.xml?rev=591028&amp;content-type=text/vnd.viewcvs-markup" class="externalLink" title="External Link">v 591028</a>
+              </p>Upgrade of release number for 1.5rc1</td></tr>
+          <tr class="b"><td>2007-11-01 11:53:12</td><td>Oliver Heger</td><td>
+              <p>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/xdocs/javadocarchive.xml" class="externalLink" title="External Link">/commons/proper/configuration/trunk/xdocs/javadocarchive.xml</a>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/xdocs/javadocarchive.xml?rev=590962&amp;content-type=text/vnd.viewcvs-markup" class="externalLink" title="External Link">v 590962</a>
+              </p>
+              <p>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/xdocs/navigation.xml" class="externalLink" title="External Link">/commons/proper/configuration/trunk/xdocs/navigation.xml</a>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/xdocs/navigation.xml?rev=590962&amp;content-type=text/vnd.viewcvs-markup" class="externalLink" title="External Link">v 590962</a>
+              </p>Updated javadoc archive</td></tr>
+          <tr class="a"><td>2007-11-01 11:28:28</td><td>Oliver Heger</td><td>
+              <p>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/build.xml" class="externalLink" title="External Link">/commons/proper/configuration/trunk/build.xml</a>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/build.xml?rev=590956&amp;content-type=text/vnd.viewcvs-markup" class="externalLink" title="External Link">v 590956</a>
+              </p>Excluded test helper class from test execution</td></tr>
+          <tr class="b"><td>2007-11-01 03:35:06</td><td>Oliver Heger</td><td>
+              <p>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/xdocs/changes.xml" class="externalLink" title="External Link">/commons/proper/configuration/trunk/xdocs/changes.xml</a>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/xdocs/changes.xml?rev=590877&amp;content-type=text/vnd.viewcvs-markup" class="externalLink" title="External Link">v 590877</a>
+              </p>
+              <p>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/xdocs/tasks.xml" class="externalLink" title="External Link">/commons/proper/configuration/trunk/xdocs/tasks.xml</a>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/xdocs/tasks.xml?rev=590877&amp;content-type=text/vnd.viewcvs-markup" class="externalLink" title="External Link">v 590877</a>
+              </p>Minor site updates</td></tr>
+          <tr class="a"><td>2007-11-01 03:02:26</td><td>Oliver Heger</td><td>
+              <p>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/RELEASE-NOTES.txt" class="externalLink" title="External Link">/commons/proper/configuration/trunk/RELEASE-NOTES.txt</a>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/RELEASE-NOTES.txt?rev=590876&amp;content-type=text/vnd.viewcvs-markup" class="externalLink" title="External Link">v 590876</a>
+              </p>Update of the release notes</td></tr>
+          <tr class="b"><td>2007-10-30 22:35:11</td><td>Oliver Heger</td><td>
+              <p>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/src/java/org/apache/commons/configuration/plist/PropertyListConfiguration.java" class="externalLink" title="External Link">/commons/proper/configuration/trunk/src/java/org/apache/commons/configuration/plist/PropertyListConfiguration.java</a>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/src/java/org/apache/commons/configuration/plist/PropertyListConfiguration.java?rev=590474&amp;content-type=text/vnd.viewcvs-markup" class="externalLink" title="External Link">v 590474</a>
+              </p>
+              <p>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/src/java/org/apache/commons/configuration/plist/PropertyListParser.java" class="externalLink" title="External Link">/commons/proper/configuration/trunk/src/java/org/apache/commons/configuration/plist/PropertyListParser.java</a>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/src/java/org/apache/commons/configuration/plist/PropertyListParser.java?rev=590474&amp;content-type=text/vnd.viewcvs-markup" class="externalLink" title="External Link">v 590474</a>
+              </p>
+              <p>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/src/java/org/apache/commons/configuration/plist/PropertyListParser.jj" class="externalLink" title="External Link">/commons/proper/configuration/trunk/src/java/org/apache/commons/configuration/plist/PropertyListParser.jj</a>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/src/java/org/apache/commons/configuration/plist/PropertyListParser.jj?rev=590474&amp;content-type=text/vnd.viewcvs-markup" class="externalLink" title="External Link">v 590474</a>
+              </p>
+              <p>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/src/test/org/apache/commons/configuration/plist/TestPropertyListConfiguration.java" class="externalLink" title="External Link">/commons/proper/configuration/trunk/src/test/org/apache/commons/configuration/plist/TestPropertyListConfiguration.java</a>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/src/test/org/apache/commons/configuration/plist/TestPropertyListConfiguration.java?rev=590474&amp;content-type=text/vnd.viewcvs-markup" class="externalLink" title="External Link">v 590474</a>
+              </p>
+              <p>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/src/test/org/apache/commons/configuration/plist/TestPropertyListParser.java" class="externalLink" title="External Link">/commons/proper/configuration/trunk/src/test/org/apache/commons/configuration/plist/TestPropertyListParser.java</a>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/src/test/org/apache/commons/configuration/plist/TestPropertyListParser.java?rev=590474&amp;content-type=text/vnd.viewcvs-markup" class="externalLink" title="External Link">v 590474</a>
+              </p>CONFIGURATION-261: Parsing and formatting date values for PropertyListConfiguration is now done manually and works on Java 1.3, too</td></tr>
+          <tr class="a"><td>2007-10-28 17:56:25</td><td>Oliver Heger</td><td>
+              <p>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/src/java/org/apache/commons/configuration/reloading/ManagedReloadingStrategy.java" class="externalLink" title="External Link">/commons/proper/configuration/trunk/src/java/org/apache/commons/configuration/reloading/ManagedReloadingStrategy.java</a>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/src/java/org/apache/commons/configuration/reloading/ManagedReloadingStrategy.java?rev=589381&amp;content-type=text/vnd.viewcvs-markup" class="externalLink" title="External Link">v 589381</a>
+              </p>Fix for PMD warning</td></tr>
+          <tr class="b"><td>2007-10-28 17:37:35</td><td>Oliver Heger</td><td>
+              <p>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/src/java/org/apache/commons/configuration/AbstractHierarchicalFileConfiguration.java" class="externalLink" title="External Link">/commons/proper/configuration/trunk/src/java/org/apache/commons/configuration/AbstractHierarchicalFileConfiguration.java</a>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/src/java/org/apache/commons/configuration/AbstractHierarchicalFileConfiguration.java?rev=589380&amp;content-type=text/vnd.viewcvs-markup" class="externalLink" title="External Link">v 589380</a>
+              </p>
+              <p>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/src/java/org/apache/commons/configuration/DataConfiguration.java" class="externalLink" title="External Link">/commons/proper/configuration/trunk/src/java/org/apache/commons/configuration/DataConfiguration.java</a>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/src/java/org/apache/commons/configuration/DataConfiguration.java?rev=589380&amp;content-type=text/vnd.viewcvs-markup" class="externalLink" title="External Link">v 589380</a>
+              </p>
+              <p>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/src/java/org/apache/commons/configuration/DatabaseConfiguration.java" class="externalLink" title="External Link">/commons/proper/configuration/trunk/src/java/org/apache/commons/configuration/DatabaseConfiguration.java</a>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/src/java/org/apache/commons/configuration/DatabaseConfiguration.java?rev=589380&amp;content-type=text/vnd.viewcvs-markup" class="externalLink" title="External Link">v 589380</a>
+              </p>
+              <p>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/src/java/org/apache/commons/configuration/DefaultConfigurationBuilder.java" class="externalLink" title="External Link">/commons/proper/configuration/trunk/src/java/org/apache/commons/configuration/DefaultConfigurationBuilder.java</a>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/src/java/org/apache/commons/configuration/DefaultConfigurationBuilder.java?rev=589380&amp;content-type=text/vnd.viewcvs-markup" class="externalLink" title="External Link">v 589380</a>
+              </p>
+              <p>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/src/java/org/apache/commons/configuration/HierarchicalConfiguration.java" class="externalLink" title="External Link">/commons/proper/configuration/trunk/src/java/org/apache/commons/configuration/HierarchicalConfiguration.java</a>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/src/java/org/apache/commons/configuration/HierarchicalConfiguration.java?rev=589380&amp;content-type=text/vnd.viewcvs-markup" class="externalLink" title="External Link">v 589380</a>
+              </p>
+              <p>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/src/java/org/apache/commons/configuration/INIConfiguration.java" class="externalLink" title="External Link">/commons/proper/configuration/trunk/src/java/org/apache/commons/configuration/INIConfiguration.java</a>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/src/java/org/apache/commons/configuration/INIConfiguration.java?rev=589380&amp;content-type=text/vnd.viewcvs-markup" class="externalLink" title="External Link">v 589380</a>
+              </p>
+              <p>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/src/java/org/apache/commons/configuration/PropertiesConfigurationLayout.java" class="externalLink" title="External Link">/commons/proper/configuration/trunk/src/java/org/apache/commons/configuration/PropertiesConfigurationLayout.java</a>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/src/java/org/apache/commons/configuration/PropertiesConfigurationLayout.java?rev=589380&amp;content-type=text/vnd.viewcvs-markup" class="externalLink" title="External Link">v 589380</a>
+              </p>
+              <p>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/src/java/org/apache/commons/configuration/PropertyConverter.java" class="externalLink" title="External Link">/commons/proper/configuration/trunk/src/java/org/apache/commons/configuration/PropertyConverter.java</a>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/src/java/org/apache/commons/configuration/PropertyConverter.java?rev=589380&amp;content-type=text/vnd.viewcvs-markup" class="externalLink" title="External Link">v 589380</a>
+              </p>
+              <p>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/src/java/org/apache/commons/configuration/XMLConfiguration.java" class="externalLink" title="External Link">/commons/proper/configuration/trunk/src/java/org/apache/commons/configuration/XMLConfiguration.java</a>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/src/java/org/apache/commons/configuration/XMLConfiguration.java?rev=589380&amp;content-type=text/vnd.viewcvs-markup" class="externalLink" title="External Link">v 589380</a>
+              </p>
+              <p>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/src/java/org/apache/commons/configuration/plist/PropertyListConfiguration.java" class="externalLink" title="External Link">/commons/proper/configuration/trunk/src/java/org/apache/commons/configuration/plist/PropertyListConfiguration.java</a>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/src/java/org/apache/commons/configuration/plist/PropertyListConfiguration.java?rev=589380&amp;content-type=text/vnd.viewcvs-markup" class="externalLink" title="External Link">v 589380</a>
+              </p>Fixed checkstyle warnings</td></tr>
+          <tr class="a"><td>2007-10-28 17:34:09</td><td>Oliver Heger</td><td>
+              <p>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/src/java/org/apache/commons/configuration/ConfigurationBuilder.java" class="externalLink" title="External Link">/commons/proper/configuration/trunk/src/java/org/apache/commons/configuration/ConfigurationBuilder.java</a>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/src/java/org/apache/commons/configuration/ConfigurationBuilder.java?rev=589379&amp;content-type=text/vnd.viewcvs-markup" class="externalLink" title="External Link">v 589379</a>
+              </p>Set missing svn properties</td></tr>
+          <tr class="b"><td>2007-10-27 20:25:57</td><td>Oliver Heger</td><td>
+              <p>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/xdocs/javadoc.xml" class="externalLink" title="External Link">/commons/proper/configuration/trunk/xdocs/javadoc.xml</a>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/xdocs/javadoc.xml?rev=589190&amp;content-type=text/vnd.viewcvs-markup" class="externalLink" title="External Link">v 589190</a>
+              </p>
+              <p>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/xdocs/javadocarchive.xml (von /commons/proper/configuration/trunk/xdocs/javadoc.xml:570460)" class="externalLink" title="External Link">/commons/proper/configuration/trunk/xdocs/javadocarchive.xml (von /commons/proper/configuration/trunk/xdocs/javadoc.xml:570460)</a>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/xdocs/javadocarchive.xml (von /commons/proper/configuration/trunk/xdocs/javadoc.xml:570460)?rev=589190&amp;content-type=text/vnd.viewcvs-markup" class="externalLink" title="External Link">v 589190</a>
+              </p>
+              <p>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/xdocs/navigation.xml" class="externalLink" title="External Link">/commons/proper/configuration/trunk/xdocs/navigation.xml</a>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/xdocs/navigation.xml?rev=589190&amp;content-type=text/vnd.viewcvs-markup" class="externalLink" title="External Link">v 589190</a>
+              </p>Renamed page with the javadoc archive because it was hiding the javadoc report; corrected links</td></tr>
+          <tr class="a"><td>2007-10-27 19:33:49</td><td>Oliver Heger</td><td>
+              <p>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/xdocs/changes.xml" class="externalLink" title="External Link">/commons/proper/configuration/trunk/xdocs/changes.xml</a>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/xdocs/changes.xml?rev=589172&amp;content-type=text/vnd.viewcvs-markup" class="externalLink" title="External Link">v 589172</a>
+              </p>
+              <p>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/xdocs/userguide/howto_utilities.xml" class="externalLink" title="External Link">/commons/proper/configuration/trunk/xdocs/userguide/howto_utilities.xml</a>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/xdocs/userguide/howto_utilities.xml?rev=589172&amp;content-type=text/vnd.viewcvs-markup" class="externalLink" title="External Link">v 589172</a>
+              </p>
+              <p>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/xdocs/userguide/user_guide.xml" class="externalLink" title="External Link">/commons/proper/configuration/trunk/xdocs/userguide/user_guide.xml</a>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/xdocs/userguide/user_guide.xml?rev=589172&amp;content-type=text/vnd.viewcvs-markup" class="externalLink" title="External Link">v 589172</a>
+              </p>CONFIGURATION-273: Added a section about the new interpolatedConfiguration() method to the user guide</td></tr>
+          <tr class="b"><td>2007-10-27 16:41:13</td><td>Oliver Heger</td><td>
+              <p>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/src/java/org/apache/commons/configuration/AbstractConfiguration.java" class="externalLink" title="External Link">/commons/proper/configuration/trunk/src/java/org/apache/commons/configuration/AbstractConfiguration.java</a>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/src/java/org/apache/commons/configuration/AbstractConfiguration.java?rev=589138&amp;content-type=text/vnd.viewcvs-markup" class="externalLink" title="External Link">v 589138</a>
+              </p>Javadoc only: spelling fixes</td></tr>
+          <tr class="a"><td>2007-10-27 16:38:15</td><td>Oliver Heger</td><td>
+              <p>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/project.xml" class="externalLink" title="External Link">/commons/proper/configuration/trunk/project.xml</a>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/project.xml?rev=589136&amp;content-type=text/vnd.viewcvs-markup" class="externalLink" title="External Link">v 589136</a>
+              </p>
+              <p>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/src/java/org/apache/commons/configuration/HierarchicalConfiguration.java" class="externalLink" title="External Link">/commons/proper/configuration/trunk/src/java/org/apache/commons/configuration/HierarchicalConfiguration.java</a>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/src/java/org/apache/commons/configuration/HierarchicalConfiguration.java?rev=589136&amp;content-type=text/vnd.viewcvs-markup" class="externalLink" title="External Link">v 589136</a>
+              </p>
+              <p>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/src/test/org/apache/commons/configuration/InterpolationTestHelper.java" class="externalLink" title="External Link">/commons/proper/configuration/trunk/src/test/org/apache/commons/configuration/InterpolationTestHelper.java</a>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/src/test/org/apache/commons/configuration/InterpolationTestHelper.java?rev=589136&amp;content-type=text/vnd.viewcvs-markup" class="externalLink" title="External Link">v 589136</a>
+              </p>
+              <p>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/src/test/org/apache/commons/configuration/TestHierarchicalConfiguration.java" class="externalLink" title="External Link">/commons/proper/configuration/trunk/src/test/org/apache/commons/configuration/TestHierarchicalConfiguration.java</a>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/src/test/org/apache/commons/configuration/TestHierarchicalConfiguration.java?rev=589136&amp;content-type=text/vnd.viewcvs-markup" class="externalLink" title="External Link">v 589136</a>
+              </p>CONFIGURATION-273: Provide a special implementation of interpolatedConfiguration() for hierarchical configurations</td></tr>
+          <tr class="b"><td>2007-10-25 21:22:35</td><td>Oliver Heger</td><td>
+              <p>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/src/java/org/apache/commons/configuration/AbstractConfiguration.java" class="externalLink" title="External Link">/commons/proper/configuration/trunk/src/java/org/apache/commons/configuration/AbstractConfiguration.java</a>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/src/java/org/apache/commons/configuration/AbstractConfiguration.java?rev=588335&amp;content-type=text/vnd.viewcvs-markup" class="externalLink" title="External Link">v 588335</a>
+              </p>
+              <p>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/src/test/org/apache/commons/configuration/InterpolationTestHelper.java" class="externalLink" title="External Link">/commons/proper/configuration/trunk/src/test/org/apache/commons/configuration/InterpolationTestHelper.java</a>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/src/test/org/apache/commons/configuration/InterpolationTestHelper.java?rev=588335&amp;content-type=text/vnd.viewcvs-markup" class="externalLink" title="External Link">v 588335</a>
+              </p>
+              <p>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/src/test/org/apache/commons/configuration/TestBaseConfiguration.java" class="externalLink" title="External Link">/commons/proper/configuration/trunk/src/test/org/apache/commons/configuration/TestBaseConfiguration.java</a>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/src/test/org/apache/commons/configuration/TestBaseConfiguration.java?rev=588335&amp;content-type=text/vnd.viewcvs-markup" class="externalLink" title="External Link">v 588335</a>
+              </p>CONFIGURATION-273: Added a new method interpolatedConfiguration() to AbstractConfiguration, which returns a configuration with all variables substituted by their actual values; tests for interpolation have been refactored into a special test class, so that they can easily be applied to other Configuration implementations.</td></tr>
+          <tr class="a"><td>2007-10-25 21:01:31</td><td>Oliver Heger</td><td>
+              <p>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/src/java/org/apache/commons/configuration/interpol/ConstantLookup.java" class="externalLink" title="External Link">/commons/proper/configuration/trunk/src/java/org/apache/commons/configuration/interpol/ConstantLookup.java</a>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/src/java/org/apache/commons/configuration/interpol/ConstantLookup.java?rev=588329&amp;content-type=text/vnd.viewcvs-markup" class="externalLink" title="External Link">v 588329</a>
+              </p>
+              <p>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/src/test/org/apache/commons/configuration/interpol/TestConstantLookup.java" class="externalLink" title="External Link">/commons/proper/configuration/trunk/src/test/org/apache/commons/configuration/interpol/TestConstantLookup.java</a>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/src/test/org/apache/commons/configuration/interpol/TestConstantLookup.java?rev=588329&amp;content-type=text/vnd.viewcvs-markup" class="externalLink" title="External Link">v 588329</a>
+              </p>
+              <p>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/xdocs/changes.xml" class="externalLink" title="External Link">/commons/proper/configuration/trunk/xdocs/changes.xml</a>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/xdocs/changes.xml?rev=588329&amp;content-type=text/vnd.viewcvs-markup" class="externalLink" title="External Link">v 588329</a>
+              </p>CONFIGURATION-299: Fix for ClassCastExceptions in ConstantLookup when resolving non-String variables</td></tr>
+          <tr class="b"><td>2007-10-23 21:19:49</td><td>Oliver Heger</td><td>
+              <p>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/pom.xml" class="externalLink" title="External Link">/commons/proper/configuration/trunk/pom.xml</a>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/pom.xml?rev=587645&amp;content-type=text/vnd.viewcvs-markup" class="externalLink" title="External Link">v 587645</a>
+              </p>
+              <p>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/project.xml" class="externalLink" title="External Link">/commons/proper/configuration/trunk/project.xml</a>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/project.xml?rev=587645&amp;content-type=text/vnd.viewcvs-markup" class="externalLink" title="External Link">v 587645</a>
+              </p>
+              <p>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/xdocs/changes.xml" class="externalLink" title="External Link">/commons/proper/configuration/trunk/xdocs/changes.xml</a>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/xdocs/changes.xml?rev=587645&amp;content-type=text/vnd.viewcvs-markup" class="externalLink" title="External Link">v 587645</a>
+              </p>Marking dependencies to commons-codec and commons-jxpath as optional; thanks to Nicolas De Loof who pointed this out.</td></tr>
+          <tr class="a"><td>2007-10-23 21:03:47</td><td>Oliver Heger</td><td>
+              <p>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/build.xml" class="externalLink" title="External Link">/commons/proper/configuration/trunk/build.xml</a>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/build.xml?rev=587636&amp;content-type=text/vnd.viewcvs-markup" class="externalLink" title="External Link">v 587636</a>
+              </p>
+              <p>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/pom.xml" class="externalLink" title="External Link">/commons/proper/configuration/trunk/pom.xml</a>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/pom.xml?rev=587636&amp;content-type=text/vnd.viewcvs-markup" class="externalLink" title="External Link">v 587636</a>
+              </p>
+              <p>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/project.xml" class="externalLink" title="External Link">/commons/proper/configuration/trunk/project.xml</a>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/project.xml?rev=587636&amp;content-type=text/vnd.viewcvs-markup" class="externalLink" title="External Link">v 587636</a>
+              </p>
+              <p>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/src/java/org/apache/commons/configuration/EnvironmentConfiguration.java" class="externalLink" title="External Link">/commons/proper/configuration/trunk/src/java/org/apache/commons/configuration/EnvironmentConfiguration.java</a>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/src/java/org/apache/commons/configuration/EnvironmentConfiguration.java?rev=587636&amp;content-type=text/vnd.viewcvs-markup" class="externalLink" title="External Link">v 587636</a>
+              </p>
+              <p>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/src/test/org/apache/commons/configuration/TestEnvironmentConfiguration.java" class="externalLink" title="External Link">/commons/proper/configuration/trunk/src/test/org/apache/commons/configuration/TestEnvironmentConfiguration.java</a>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/src/test/org/apache/commons/configuration/TestEnvironmentConfiguration.java?rev=587636&amp;content-type=text/vnd.viewcvs-markup" class="externalLink" title="External Link">v 587636</a>
+              </p>
+              <p>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/xdocs/changes.xml" class="externalLink" title="External Link">/commons/proper/configuration/trunk/xdocs/changes.xml</a>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/xdocs/changes.xml?rev=587636&amp;content-type=text/vnd.viewcvs-markup" class="externalLink" title="External Link">v 587636</a>
+              </p>
+              <p>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/xdocs/dependencies.xml" class="externalLink" title="External Link">/commons/proper/configuration/trunk/xdocs/dependencies.xml</a>
+                <a href="http://svn.apache.org/repos/asf/commons/proper/configuration/trunk/commons/proper/configuration/trunk/xdocs/dependencies.xml?rev=587636&amp;content-type=text/vnd.viewcvs-markup" class="externalLink" title="External Link">v 587636</a>
+              </p>CONFIGURATION-284: New EnvironmentConfiguration class; thanks to Nicolas De Loof for the patch.</td></tr>
+        </tbody></table></div></div></div><div class="clear"><hr></hr></div><div id="footer"><div class="xright">© 2001-2007, The Apache Software Foundation</div><div class="clear"><hr></hr></div></div></body></html>

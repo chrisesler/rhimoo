@@ -1,0 +1,2 @@
+127.0.0.1 - admin [17/Mar/2008:15:27:03 +0000] "GET / HTTP/1.1" 200 408 "-" "Mozilla/5.0 (Macintosh; U; PPC Mac OS X Mach-O; en; rv:1.8.1.11) Gecko/20071128 Camino/1.5.4"
+127.0.0.1 - admin [17/Mar/2008:15:27:15 +0000] "GET /admin HTTP/1.1" 200 408 "-" "Mozilla/5.0 (Macintosh; U; PPC Mac OS X Mach-O; en; rv:1.8.1.11) Gecko/20071128 Camino/1.5.4"
